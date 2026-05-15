@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "gatsby": "^5.14.6",
+    "gatsby-adapter-netlify": "^1.4.0",
     "gatsby-plugin-google-gtag": "^5.16.0",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-sass": "^6.16.0",
@@ -26,6 +27,7 @@
     "http-proxy-middleware": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.10",
     "sass": "^1.99.0",
     "swiper": "^6.8.4"
   }
