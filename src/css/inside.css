@@ -1,0 +1,129 @@
+.inside-banner {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  height: 710px;
+  background: url("https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/about_banner-1.webp");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  height: 1000px;
+}
+@media (max-width: 1680px) {
+  .inside-banner {
+    /* height: 600px; */
+  }
+}
+@media (max-width: 1440px) {
+  .inside-banner {
+    /* height: 500px; */
+  }
+}
+@media (max-width: 1366px) {
+  .inside-banner {
+    /* height: 500px; */
+  }
+}
+@media (max-width: 1280px) {
+  .inside-banner {
+    /* height: 400px; */
+  }
+}
+@media (max-width: 860px) {
+  .inside-banner {
+    /* height: 300px; */
+  }
+}
+@media (max-width: 767px) {
+  .inside-banner {
+    margin-top: 10px;
+  }
+}
+.inside-banner .container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dr-vishal-pingale {
+  margin-bottom: 80px;
+}
+@media (max-width: 1024px) {
+  .Dr-vishal-pingale {
+    margin-bottom: 50px;
+  }
+}
+.Dr-vishal-pingale .container {
+  text-align: center;
+}
+.Dr-vishal-pingale .container p {
+  font-size: clamp(1.25rem, -0.75rem + 2.5vw, 2.25rem);
+}
+.Dr-vishal-pingale .container .img-wrap {
+  margin-top: 80px;
+  /* height: 710px; */
+  height: auto;
+}
+.Dr-vishal-pingale .container .img-wrap img {
+  width: 100%;
+}/*# sourceMappingURL=inside.css.map */
+
+
+.inside-banner .about-banner-list {
+display: flex;
+justify-content: center;
+text-align: center;
+/* gap: 150px; */
+}
+.inside-banner .about-banner-list li{
+  padding: 0 70px;
+  position: relative;
+}
+.inside-banner .about-banner-list li:last-child::before {
+ display: none;
+}
+.inside-banner .about-banner-list li span{
+color: #FF875A;
+}
+.inside-banner .about-banner-list li p{
+  margin-bottom: 10px;
+}
+.inside-banner .about-banner-list li::before{
+position: absolute;
+right: 0;
+width: 1px;
+height: 100%;
+background-color: #FF875A;
+content: "";
+}
+
+.title-wrap{
+position: absolute;
+left: 7%;
+top: 33%;
+  /* left: 0; */
+  width: 100%;
+}
+
+.title-wrap .wrap{
+position: absolute;
+top: 33%;
+  left: 0;
+  width: 100%;
+}
+
+.content-swiper-wrapper .swiper-wrapper{
+  position: relative;
+}
+
+.content-swiper-wrapper .swiper-wrapper .navigation{
+  position: absolute;
+    right: 0;
+    /* width: 100%; */
+    height: 30px;
+    left: auto;
+    bottom: 45px;
+    height: 30px;
+    width: 105px;
+}

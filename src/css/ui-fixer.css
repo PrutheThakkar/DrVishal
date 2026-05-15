@@ -1,0 +1,11 @@
+
+.product-list li .img-wrap{
+    z-index: 0;
+}
+
+.inside-faq .faq-section .faq-left{
+display: none;
+}
+.inside-faq .faq-section .faq-right{
+width: 100%;
+}

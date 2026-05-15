@@ -1,0 +1,146 @@
+.Dr-vishal-pingale {
+  margin-bottom: 80px;
+}
+@media (max-width: 1024px) {
+  .Dr-vishal-pingale {
+    margin-bottom: 50px;
+  }
+}
+.Dr-vishal-pingale .container {
+  text-align: center;
+}
+.Dr-vishal-pingale .container p {
+  font-size: clamp(1.25rem, -0.75rem + 2.5vw, 2.25rem);
+}
+.Dr-vishal-pingale .container .img-wrap {
+  margin-top: 80px;
+}
+.Dr-vishal-pingale .container .img-wrap img {
+  width: 100%;
+  height: auto;
+}
+.Dr-vishal-pingale .img-wrap{
+   margin-bottom: 50px;
+}
+
+.infro-section {
+  margin-bottom: 80px;
+}
+.infro-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .infro-section .container {
+    flex-direction: column-reverse;
+  }
+}
+.infro-section .container .left {
+  width: 100%;
+}
+.infro-section .container p {
+  font-size: clamp(1.25rem, -0.75rem + 2.5vw, 2.25rem);
+}
+.infro-section .right {
+  width: 50%;
+  background: #C1272D;
+  margin-left: 20px;
+}
+@media (max-width: 767px) {
+  .infro-section .right {
+    margin-left: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+.infro-section .right .img-wrapper {
+  height: 350px;
+}
+@media (max-width: 1680px) {
+  .infro-section .right .img-wrapper {
+    height: 362px;
+  }
+}
+@media (max-width: 1440px) {
+  .infro-section .right .img-wrapper {
+    height: 300px;
+  }
+}
+@media (max-width: 1366px) {
+  .infro-section .right .img-wrapper {
+    height: 270px;
+  }
+}
+
+.clinical-philosophy {
+  margin-bottom: 80px;
+}
+.clinical-philosophy .container {
+  text-align: center;
+}
+.clinical-philosophy .container p {
+  font-size: clamp(1.25rem, -0.75rem + 2.5vw, 2.25rem);
+}
+.clinical-philosophy .container .img-wrap {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  background: #C1272D;
+  height: 710px;
+}
+@media (max-width: 1680px) {
+  .clinical-philosophy .container .img-wrap {
+    height: 600px;
+  }
+}
+@media (max-width: 1440px) {
+  .clinical-philosophy .container .img-wrap {
+    height: 500px;
+  }
+}
+@media (max-width: 1366px) {
+  .clinical-philosophy .container .img-wrap {
+    height: 500px;
+  }
+}
+@media (max-width: 1280px) {
+  .clinical-philosophy .container .img-wrap {
+    height: 400px;
+  }
+}
+@media (max-width: 860px) {
+  .clinical-philosophy .container .img-wrap {
+    height: 300px;
+  }
+}
+.clinical-philosophy .container .img-wrap img {
+  width: 100%;
+}/*# sourceMappingURL=about.css.map */
+
+
+ul.list-od-degree{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  
+}
+
+ul.list-od-degree p{
+  font-size: 20px !important;
+  margin-bottom: 5px;
+  color: #C1272D;
+}
+ul.list-od-degree img{
+  margin-bottom: 10px;
+}
+
+ul.list-od-degree p.black{
+color: #000000;
+}
+
+p span{
+  color: #C1272D;
+}
