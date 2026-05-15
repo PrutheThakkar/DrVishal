@@ -7,7 +7,7 @@ import { Link, graphql } from "gatsby"
 
 import TabSwiperCoronary from "../Components/Tabswipercoronary"
 import Layout from "../Components/Layout.js"
-import InsideBanner from "../components/Inside-Page-Top-Sec.js"
+import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 
 // ── Static data ──────────────────────────────────────────────────────────────
 

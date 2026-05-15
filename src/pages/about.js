@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../Components/Layout.js"
-import InsideBanner from "../components/Inside-Page-Top-Sec.js"
+import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 
 const AboutPage = ({ data }) => {
   const page = data?.wpPage

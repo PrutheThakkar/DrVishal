@@ -1,6 +1,6 @@
 // src/pages/request-appointment.js
 import React from "react"
-import InsideBanner from "../components/Inside-Page-Top-Sec.js"
+import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 import { graphql } from "gatsby"
 import Layout from "../Components/Layout.js"
 
