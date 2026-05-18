@@ -108,16 +108,28 @@ export default function IndexPage() {
       }
     }
   }
-  allWpPost (limit: 3) {
-    edges {
-      node {
-        title
-        uri
-        slug
-        content
+  allWpPost(limit: 3, sort: { date: DESC }) {
+  edges {
+    node {
+      id
+      title
+      uri
+      slug
+      excerpt
+      featuredImage {
+        node {
+          altText
+          gatsbyImage(
+            layout: CONSTRAINED
+            width: 520
+            height: 360
+            placeholder: BLURRED
+          )
+        }
       }
     }
   }
+}
 }
   `);
 
@@ -162,12 +174,12 @@ export default function IndexPage() {
   const posts = data.allWpPost.edges;
 
   useEffect(() => {
-  const cleanupAnimations = initHomeAnimations();
+    const cleanupAnimations = initHomeAnimations();
 
-  return () => {
-    cleanupAnimations();
-  };
-}, []);
+    return () => {
+      cleanupAnimations();
+    };
+  }, []);
 
   return (
     <Layout>
@@ -322,7 +334,7 @@ export default function IndexPage() {
               <GatsbyImage
                 image={internationalTrainingImageData} // Pass the image data from GraphQL
                 alt={internationalTrainingImageAlt}
-                
+
               />
             </div>
             <div className="right">
@@ -385,36 +397,42 @@ export default function IndexPage() {
           {/* Default grid layout for larger screens */}
           <div className="blog-cards-container desktop-blog">
             {/* Dynamically Render Blog Cards */}
-            {posts.map(({ node }, index) => {
-              const image = node.featuredImage?.node.gatsbyImage;
-              // Use fallback image if featured image is not available
-              const imageSrc = image ? image : "https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/02/Rectangle-7.jpg";
-              const imageAlt = node.featuredImage?.node.altText || "Fallback Image"; // Fallback alt text
+            {posts.map(({ node }) => {
+              const image = node.featuredImage?.node?.gatsbyImage
+              const imageAlt = node.featuredImage?.node?.altText || node.title
 
               return (
-                <div key={index} className="blog-card">
+                <div key={node.id} className="blog-card">
                   <div className="blog-img">
-                    {/* Render blog image with GatsbyImage or static fallback */}
                     {image ? (
-                      <GatsbyImage
-                        image={image}
-                        alt={imageAlt}
-                      />
+                      <GatsbyImage image={image} alt={imageAlt} />
                     ) : (
-                      <img src={imageSrc} alt={imageAlt} />
+                      <img
+                        src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/02/Rectangle-7.jpg"
+                        alt="Fallback"
+                      />
                     )}
                   </div>
+
                   <div className="blog-wrapper">
                     <div className="blog-card-header">
                       <span className="blog-category">Heart</span>
                       <span className="blog-category">Wellness</span>
                     </div>
+
                     <h3 className="blog-card-title">{node.title}</h3>
-                    <p className="blog-card-description" dangerouslySetInnerHTML={{ __html: node.content }} />
-                    <a href={node.uri} className="read-more-btn">Read More</a>
+
+                    <div
+                      className="blog-card-description"
+                      dangerouslySetInnerHTML={{ __html: node.excerpt }}
+                    />
+
+                    <a href={node.uri} className="read-more-btn">
+                      Read More
+                    </a>
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
 
