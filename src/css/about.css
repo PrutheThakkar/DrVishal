@@ -67,11 +67,11 @@
     height: 300px;
   }
 }
-@media (max-width: 1366px) {
+/* @media (max-width: 1366px) {
   .infro-section .right .img-wrapper {
     height: 270px;
   }
-}
+} */
 
 .clinical-philosophy {
   margin-bottom: 80px;
@@ -125,7 +125,12 @@ ul.list-od-degree{
   width: 95%;
   margin: 0 auto;
   margin-bottom: 60px;
-  
+}
+@media (max-width:1000px) {
+  ul.list-od-degree li{
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 ul.list-od-degree p{

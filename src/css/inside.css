@@ -1,7 +1,7 @@
 .inside-banner {
   margin-top: 30px;
   margin-bottom: 50px;
-  height: 710px;
+  /* height: 710px; */
   background: url("https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/about_banner-1.webp");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -10,27 +10,27 @@
 }
 @media (max-width: 1680px) {
   .inside-banner {
-    /* height: 600px; */
+    height: 900px;
   }
 }
 @media (max-width: 1440px) {
   .inside-banner {
-    /* height: 500px; */
+    height: 800px;
   }
 }
 @media (max-width: 1366px) {
   .inside-banner {
-    /* height: 500px; */
+    height: 700px;
   }
 }
 @media (max-width: 1280px) {
   .inside-banner {
-    /* height: 400px; */
+    height: 600px;
   }
 }
 @media (max-width: 860px) {
   .inside-banner {
-    /* height: 300px; */
+    height: 425px;
   }
 }
 @media (max-width: 767px) {
@@ -76,9 +76,19 @@ justify-content: center;
 text-align: center;
 /* gap: 150px; */
 }
+@media (max-width:1000px) {
+  .inside-banner .about-banner-list {
+    display: none;
+  }
+}
 .inside-banner .about-banner-list li{
   padding: 0 70px;
   position: relative;
+}
+@media (max-width:1280px) {
+  .inside-banner .about-banner-list li{
+    padding: 0 40px;
+  }
 }
 .inside-banner .about-banner-list li:last-child::before {
  display: none;
@@ -100,10 +110,21 @@ content: "";
 
 .title-wrap{
 position: absolute;
-left: 7%;
+left:0;
 top: 33%;
   /* left: 0; */
   width: 100%;
+  
+}
+@media (max-width:1366px) {
+  .title-wrap{
+    top: 23%;
+  }
+}
+@media (max-width:767px) {
+  .title-wrap{
+    top: 15%;
+  }
 }
 
 .title-wrap .wrap{
@@ -111,6 +132,19 @@ position: absolute;
 top: 33%;
   left: 0;
   width: 100%;
+}
+@media (max-width:1366px) {
+   .title-wrap{
+    top: 23%;
+  }
+}
+@media (max-width:767px) {
+   .title-wrap{
+    top: 15%;
+  }
+}
+.title-wrap .wrap h1, .title-wrap .wrap ul{
+  padding-left: 15%;
 }
 
 .content-swiper-wrapper .swiper-wrapper{

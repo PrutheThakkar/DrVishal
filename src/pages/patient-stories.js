@@ -2,7 +2,7 @@
 import React from "react"
 
 import Layout from "../Components/Layout.js";
-import InsideBanner from "../omponents/Inside-Page-Top-Sec.js"
+import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 import { graphql } from "gatsby"
 const PatientStoriesPage = ({data}) => {
   const page = data?.wpPage

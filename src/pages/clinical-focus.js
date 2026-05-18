@@ -81,75 +81,7 @@ const ClinicalFocusPage = ({ data }) => {
       {/* ── Tab Swiper Coronary — separate component ── */}
       <TabSwiperCoronary />
 
-      {/* ── Hospitals & Clinical Access ── */}
-      <section className="hospital-clinic-access">
-        <div className="container">
-          <div className="title-wrapper">
-            <h2>
-              Hospitals &amp; Clinical access{" "}
-              <span>Advanced Cardiac Care, Within Reach</span>
-            </h2>
-
-            <p>
-              Dr. Vishal Pingle operates at leading hospitals across Mumbai,
-              each equipped with state-of-the-art cardiac ICUs, advanced
-              surgical technology, and specialized transplant programs. This
-              allows patients to receive complex heart and lung care with the
-              highest standards of safety and precision, while maintaining
-              continuity and personalized attention.
-            </p>
-
-            <p>
-              Appointments are simple and flexible, with options for online
-              booking, phone consultations, or hospital referrals. Each hospital
-              is chosen for accessibility, patient-friendly facilities, and
-              expert multidisciplinary teams, ensuring that world-class cardiac
-              care is always convenient and stress-free.
-            </p>
-          </div>
-
-          <div className="wrapper">
-            {/* Left feature image */}
-            <div className="left">
-              <div className="img-wrapp">
-                <img
-                  src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/02/placeholder.jpg"
-                  alt="Hospital"
-                />
-              </div>
-            </div>
-
-            {/* Hospital list */}
-            <div className="right">
-              <ul>
-                {hospitals.map((hospital, index) => (
-                  <li key={index}>
-                    <div className="left">
-                      <div className="img-wrapper">
-                        <img src={hospital.image} alt={hospital.name} />
-                      </div>
-                    </div>
-
-                    <div className="right">
-                      <h3>{hospital.name}</h3>
-
-                      <p>
-                        <span>{hospital.detail}</span>
-
-                        {hospital.phone && (
-                          <a href={`tel:${hospital.phone}`}>
-                            Call on {hospital.phone}
-                          </a>
-                        )}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* ── Bottom CTA ── */}
       <section className="bottom-section">

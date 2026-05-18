@@ -147,7 +147,7 @@ const RequestAppointmentPage = ({data}) => {
                         <div className="wrapper">
                             <div className="left">
                                 <div className="img-wrapp">
-                                    <img src="./images/placeholder.jpg" alt="" />
+                                    <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/map-img.jpg" alt="" />
                                 </div>
                             </div>
 
@@ -156,12 +156,12 @@ const RequestAppointmentPage = ({data}) => {
                                     <li>
                                         <div className="left">
                                             <div className="img-wrapper">
-                                                <img src="./images/placeholder.jpg" alt="" />
+                                                <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/wockhardt-hospitl-contact.webp" alt="" />
                                             </div>
                                         </div>
                                         <div className="right">
                                             <h3>Wockhardt Hospital</h3>
-                                            <p>
+                                            <p className="info">
                                                 <span>Visits Only by appointments</span>
                                                 <a href="#">Call on 09702080365</a>
                                             </p>
@@ -171,24 +171,24 @@ const RequestAppointmentPage = ({data}) => {
                                     <li>
                                         <div className="left">
                                             <div className="img-wrapper">
-                                                <img src="./images/placeholder.jpg" alt="" />
+                                                <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/saifee-hospital-contact.webp" alt="" />
                                             </div>
                                         </div>
                                         <div className="right">
                                             <h3>Saifee Hospital</h3>
-                                            <p>Saturday : 7 pm to 9 pm</p>
+                                            <p className="info">Saturday : 7 pm to 9 pm</p>
                                         </div>
                                     </li>
 
                                     <li>
                                         <div className="left">
                                             <div className="img-wrapper">
-                                                <img src="./images/placeholder.jpg" alt="" />
+                                                <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/breach-condy-hospital-contact.webp" alt="" />
                                             </div>
                                         </div>
                                         <div className="right">
                                             <h3>Breach Candy Hospital Trust</h3>
-                                            <p>
+                                            <p className="info">
                                                 <span>Clinic visits Only by appointments</span>
                                                 <a href="#">Call on 09702080365</a>
                                             </p>
@@ -198,12 +198,12 @@ const RequestAppointmentPage = ({data}) => {
                                     <li>
                                         <div className="left">
                                             <div className="img-wrapper">
-                                                <img src="./images/placeholder.jpg" alt="" />
+                                                <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/global-hospitalp-contact.webp" alt="" />
                                             </div>
                                         </div>
                                         <div className="right">
                                             <h3>Global Hospitals</h3>
-                                            <p>
+                                            <p className="info">
                                                 <span>Clinic visits Only by appointments </span>
                                                 <a href="#">Call on 09702080365</a>
                                             </p>

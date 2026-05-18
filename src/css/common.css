@@ -366,8 +366,12 @@ h1 {
   color: var(--color-primary);
   margin-bottom: 30px;
   color: #000;
-
   text-align: center;
+}
+@media (max-width:1000px) {
+  h1{
+    font-size: clamp(1rem, 1.6872rem + 0.8013vw, 2rem);
+  }
 }
 h1 span {
   color: #C1272D;

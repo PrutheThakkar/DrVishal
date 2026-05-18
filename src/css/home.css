@@ -765,6 +765,12 @@
     margin-top: 40px;
   }
 }
+
+.international-training .international-sec .gatsby-image-wrapper{
+width: auto;
+height: auto;
+}
+
 .international-training .international-sec p {
   font-size: clamp(1.25rem, -0.75rem + 2.5vw, 2.25rem);
   text-align: center;
@@ -781,6 +787,8 @@
   width: 40%;
   height: auto;
   margin: 0 50px;
+  display: flex;
+  justify-content: center;
 }
 @media (max-width: 767px) {
   .international-training .international-sec .middle {
