@@ -3,11 +3,13 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../Components/Layout.js";
+import ClinicalProcess from "../Components/ClinicalProcess.js"
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/swiper-bundle.min.css";
 import { useEffect } from 'react';
 import SwiperCore, { Autoplay } from 'swiper';
+
 
 import FAQ from "../Components/Faq.js";
 // import ClinicalProcess from "../Components/Clinical-Process.js";
@@ -181,6 +183,8 @@ export default function IndexPage() {
     };
   }, []);
 
+
+
   return (
     <Layout>
       <section className="home-hero-sec">
@@ -263,6 +267,7 @@ export default function IndexPage() {
         </div>
       </section>
 
+
       {/* Product List Section */}
       <section className="product-list">
         <div className="container">
@@ -282,6 +287,8 @@ export default function IndexPage() {
           </ul>
         </div>
       </section>
+
+      <ClinicalProcess />
 
       {/* Surgical Approach Section */}
       <div className="title-wrapper">

@@ -52,17 +52,15 @@ const Footer = () => {
               <h4 className="footer-heading">Home</h4>
               <ul className="footer-list">
                 <li>
-                  <Link to="#">About</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link to="#">Clinical Focus</Link>
+                  <Link to="/clinical-focus">Clinical Focus</Link>
                 </li>
                 <li>
-                  <Link to="#">Patient Stories</Link>
+                  <Link to="/patient-stories">Patient Stories</Link>
                 </li>
-                <li>
-                  <Link to="#">Experience</Link>
-                </li>
+                
               </ul>
             </div>
 
@@ -70,14 +68,14 @@ const Footer = () => {
               <h4 className="footer-heading">Explore</h4>
               <ul className="footer-list">
                 <li>
-                  <Link to="#">Blog</Link>
+                  <Link to="/insights">Blog</Link>
                 </li>
                 <li>
-                  <Link to="#">FAQ</Link>
+                  <Link to="/insights">FAQ</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="#">Testimonial</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 

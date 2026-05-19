@@ -21,69 +21,7 @@ const hasElements = (selector) => {
 // DESKTOP ANIMATIONS 1200px+
 // ─────────────────────────────────────────────
 function initDesktopAnimations() {
-  const section = document.querySelector(".clinical-process");
-  const paragraph = document.querySelector(".paragraph-sec p");
-  const cardsContainer = document.querySelector(".cards-container");
-  const cards = gsap.utils.toArray(".card");
-
-  // Clinical Process Section
-  // Runs only if these elements exist in Gatsby page
-  if (section && cardsContainer && cards.length > 0) {
-    gsap.set(cardsContainer, { opacity: 0 });
-    gsap.set(cards, { x: window.innerWidth, opacity: 0 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "15% 20%",
-        end: "+=250%",
-        scrub: 1.5,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
-
-    if (paragraph) {
-      tl.to(paragraph, {
-        opacity: 1,
-        y: 0,
-        duration: 2.5,
-        ease: "power1.inOut",
-      })
-        .to({}, { duration: 3 })
-        .to(paragraph, {
-          opacity: 0.2,
-          scale: 0.9,
-          duration: 5,
-          ease: "power1.inOut",
-        });
-    }
-
-    tl.to(
-      cardsContainer,
-      {
-        opacity: 1,
-        duration: 7,
-        ease: "power1.inOut",
-      },
-      "-=0.5"
-    );
-
-    cards.forEach((card, index) => {
-      tl.to(
-        card,
-        {
-          x: 0,
-          opacity: 1,
-          duration: index === 0 ? 4 : 7 + index * 2,
-          ease: "power1.out",
-        },
-        index === 0 ? undefined : "-=1.5"
-      );
-    });
-
-    tl.to({}, { duration: 20 });
-  }
+  // Clinical process animation is handled inside the ClinicalProcess component.
 
   // Page Load Animations
   if (hasElement(".site-header")) {
@@ -494,23 +432,7 @@ function initTabletAnimations() {
     });
   }
 
-  if (hasElement(".paragraph-sec p")) {
-    gsap.fromTo(
-      ".paragraph-sec p",
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".clinical-process",
-          start: "top 75%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-  }
+  // Clinical process paragraph animation is handled in ClinicalProcess.js
 
   if (hasElement(".home-hero-sec")) {
     gsap.to(".home-hero-sec", {

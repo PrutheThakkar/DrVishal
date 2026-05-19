@@ -8,6 +8,7 @@
 
 .tab-swiper-wrapper .swiper {
   margin: 5px 60px !important;
+  overflow: hidden;
 }
 .tab-swiper-wrapper .swiper .swiper-wrapper {
   justify-content: center;
@@ -106,7 +107,7 @@
 
 .content-panel {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   min-height: 420px;
   padding: 60px 80px;
@@ -133,7 +134,9 @@
   color: #666;
   line-height: 1.7;
   margin-bottom: 24px;
-  font-size: 15px;
+  max-height: 200px;
+  overflow: hidden;
+  /* font-size: 15px; */
 }
 
 .equipment-list {
@@ -175,6 +178,7 @@
   border: none;
   transition: all 0.3s;
   text-decoration: none;
+  margin-top: 30px;
 }
 
 .explore-btn:hover {

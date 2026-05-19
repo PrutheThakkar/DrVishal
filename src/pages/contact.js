@@ -1,5 +1,5 @@
 // src/pages/request-appointment.js
-import React from "react"
+import React, { useState } from "react"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 import { graphql } from "gatsby"
 import Layout from "../Components/Layout.js"
@@ -7,6 +7,49 @@ import Layout from "../Components/Layout.js"
 const RequestAppointmentPage = ({data}) => {
   const page = data?.wpPage
   const insidePage = page?.insidePage
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  })
+  const [status, setStatus] = useState({ type: "", message: "" })
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setStatus({ type: "pending", message: "Sending message..." })
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.message || "Unable to send message")
+      }
+
+      setStatus({ type: "success", message: result.message || "Message sent successfully." })
+      setFormData({ firstName: "", lastName: "", phone: "", email: "", message: "" })
+    } catch (error) {
+      setStatus({ type: "error", message: error.message || "Something went wrong." })
+    }
+  }
 
   return (
     <Layout>
@@ -40,15 +83,17 @@ const RequestAppointmentPage = ({data}) => {
       {/* Contact Form Section */}
       <section className="contact-section">
         <div className="container">
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="input-wrap">
               <div className="form-group">
                 <input
                   type="text"
                   id="first-name"
-                  name="first-name"
+                  name="firstName"
                   placeholder="First Name *"
                   required
+                  value={formData.firstName}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -56,14 +101,27 @@ const RequestAppointmentPage = ({data}) => {
                 <input
                   type="text"
                   id="last-name"
-                  name="last-name"
+                  name="lastName"
                   placeholder="Last Name *"
                   required
+                  value={formData.lastName}
+                  onChange={handleChange}
                 />
               </div>
             </div>
 
             <div className="input-wrap">
+              <div className="form-group">
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="phone"
+                  placeholder="Telephone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+              </div>
+
               <div className="form-group">
                 <input
                   type="email"
@@ -71,33 +129,13 @@ const RequestAppointmentPage = ({data}) => {
                   name="email"
                   placeholder="Email *"
                   required
-                />
-              </div>
-
-              <div className="form-group">
-                <input
-                  type="tel"
-                  id="telephone"
-                  name="telephone"
-                  placeholder="Telephone"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
 
-            <div className="input-wrap">
-              <div className="form-group">
-                <select id="enquiry" name="enquiry" required defaultValue="">
-                  <option value="">Nature of Enquiry (Please select) *</option>
-                  <option value="option-1">Please select</option>
-                  <option value="option-2">Please select</option>
-                  <option value="option-3">Please select</option>
-                  <option value="option-4">Please select</option>
-                  <option value="option-5">Please select</option>
-                </select>
-              </div>
-
-              <div className="form-group">{/* empty column kept */}</div>
-            </div>
+         
 
             <div className="form-group">
               <textarea
@@ -105,12 +143,20 @@ const RequestAppointmentPage = ({data}) => {
                 name="message"
                 placeholder="Message *"
                 required
+                value={formData.message}
+                onChange={handleChange}
               />
             </div>
 
+            {status.message && (
+              <div className={`form-status ${status.type}`}>
+                {status.message}
+              </div>
+            )}
+
             <div className="btn-wrap">
               <button type="submit" className="submit-btn">
-                Submit
+                Book An Appointment
               </button>
             </div>
           </form>
