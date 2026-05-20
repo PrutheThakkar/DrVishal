@@ -37,12 +37,7 @@ const Footer = () => {
                 </svg>
               </a>
 
-              <a className="social-btn" href="#" aria-label="X">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M18.9 2H22l-6.8 7.78L23 22h-6.3l-5-6.46L6 22H2.9l7.3-8.36L1 2h6.5l4.5 5.9L18.9 2Zm-1.1 18h1.7L6.1 3.9H4.3L17.8 20Z" />
-                </svg>
-              </a>
+            
             </div>
           </div>
 

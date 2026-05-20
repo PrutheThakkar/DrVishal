@@ -5,6 +5,11 @@
   position: relative;
   padding: 10px 0 0;
 }
+@media (max-width:1280px) {
+  .tab-swiper-wrapper {
+    margin-bottom: 30px;
+  }
+}
 
 .tab-swiper-wrapper .swiper {
   margin: 5px 60px !important;
@@ -28,7 +33,7 @@
   display: inline-block;
   padding: 10px 22px;
   border: 2px solid #ddd;
-  border-radius: 30px;
+  border-radius: 12px;
   color: #555;
   font-size: 14px;
   font-weight: 500;
@@ -93,6 +98,14 @@
 .tab-nav-next.swiper-button-disabled {
   opacity: 0.3;
   pointer-events: none;
+  display: none;
+}
+@media (max-width:1680px) {
+  
+.tab-nav-prev.swiper-button-disabled,
+.tab-nav-next.swiper-button-disabled {
+  display: block;
+}
 }
 
 /* ===== CONTENT SWIPER ===== */
@@ -107,17 +120,23 @@
 
 .content-panel {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   min-height: 420px;
   padding: 60px 80px;
   gap: 40px;
 }
+@media (max-width:995px) {
+  .content-panel{
+
+    flex-direction: column;
+  }
+}
 
 .content-panel .text-side {
   width: 50%;
 }
-@media (max-width: 767px) {
+@media (max-width: 995px) {
   .content-panel .text-side {
     width: 100%;
   }
@@ -195,7 +214,7 @@
   min-height: 300px;
   width: 50%;
 }
-@media (max-width: 767px) {
+@media (max-width: 995px) {
   .content-panel .image-side {
     width: 100%;
      min-height: auto;

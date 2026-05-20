@@ -4,7 +4,7 @@
   justify-content: center;
 }
 .clinical-focus-section ul li {
-  width: 40%;
+  width: 30%;
   margin: 0 15px;
   overflow: hidden;
   position: relative;
@@ -23,7 +23,7 @@
   }
 }
 .clinical-focus-section ul li a img {
-  height: auto;
+  height: 350px;
   width: 100%;
 }
 @media (max-width: 1440px) {
@@ -55,6 +55,9 @@ p.read-more{
 .clinical-focus-section ul li a .text-wrap h3{
   margin-bottom: 30px;
   /* margin-top: 50px; */
+}
+.clinical-focus-section ul li a .text-wrap h3 br{
+  display: none;
 }
 /* .clinical-focus-section ul li a .text-wrap {
   position: absolute;
@@ -121,4 +124,16 @@ margin-bottom: 20px;
 }
 .blog-detail-content h3{
   margin-bottom: 20px;
+}
+
+
+.blog-detail-section .blog-image-wrap{
+  margin-bottom: 50px;
+  width: 1720px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.blog-detail-content {
+  padding: 0 60px;
 }

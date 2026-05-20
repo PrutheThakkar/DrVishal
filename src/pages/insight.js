@@ -5,6 +5,29 @@ import Layout from "../Components/Layout.js"
 import FAQ from "../Components/Faq.js"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 
+const cleanExcerpt = html => {
+  if (!html) return ""
+
+  return html
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#038;/g, "&")
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8216;/g, "'")
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&quot;/g, '"')
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&rdquo;/g, '"')
+    .replace(/&ldquo;/g, '"')
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
 const InsightsListingPage = ({ data }) => {
   const page = data?.wpPage
   const insidePage = page?.insidePage
@@ -30,34 +53,46 @@ const InsightsListingPage = ({ data }) => {
       <section className="clinical-focus-section">
         <div className="container">
           <ul>
-            {posts.map((post) => (
-              <li key={post.id}>
-                <Link to={`/insights/${post.slug}/`}>
-                  <img
-                    src={
-                      post.featuredImage?.node?.mediaItemUrl ||
-                      "https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/02/placeholder.jpg"
-                    }
-                    alt={post.featuredImage?.node?.altText || post.title}
-                  />
+            {posts.map(post => {
+              const excerptText = cleanExcerpt(post.excerpt)
 
-                  <div className="text-wrap">
-                    <div className="wrapper">
-                      <h3>{post.title}</h3>
+              return (
+                <li key={post.id}>
+                  <Link to={`/insights/${post.slug}/`}>
+                    <img
+                      src={
+                        post.featuredImage?.node?.mediaItemUrl ||
+                        "https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/02/placeholder.jpg"
+                      }
+                      alt={post.featuredImage?.node?.altText || post.title}
+                    />
 
-                      <div
-                        className="blog-excerpt"
-                        dangerouslySetInnerHTML={{
-                          __html: post.excerpt,
-                        }}
-                      />
+                    <div className="text-wrap">
+                      <div className="wrapper">
+                       
+                    <h3 
+                      dangerouslySetInnerHTML={{ __html: post.title }}
+                    />
+                        <p
+                          className="blog-excerpt"
+                          style={{
+                            display: "-webkit-box",
+                            WebkitLineClamp: 3,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          {excerptText}
+                        </p>
 
-                      <p className="read-more">Read More</p>
+                        <p className="read-more">Read More</p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </li>
-            ))}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
       </section>
@@ -103,6 +138,32 @@ export const query = graphql`
             mediaItemUrl
           }
         }
+          insights {
+        imgDesk {
+          node {
+            altText
+            gatsbyImage(
+              quality: 10
+              layout: FIXED
+              placeholder: BLURRED
+              width: 10
+              height: 10
+            )
+          }
+        }
+        imgMob{
+           node {
+            altText
+            gatsbyImage(
+              quality: 10
+              layout: FIXED
+              placeholder: BLURRED
+              width: 10
+              height: 10
+            )
+          }
+        }
+      }
       }
     }
   }

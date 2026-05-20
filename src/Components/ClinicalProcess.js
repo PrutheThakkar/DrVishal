@@ -48,13 +48,17 @@ export default function ClinicalProcess() {
 
     const section = sectionRef.current
 
-    const ctx = gsap.context(() => {
+    // Defer animation setup to ensure ScrollTrigger is ready and DOM is stable
+    const timeoutId = setTimeout(() => {
+      if (!section) return
+
+      const ctx = gsap.context(() => {
       const paragraph = section.querySelector(".paragraph-sec p")
       const cardsContainer = section.querySelector(".cards-container")
       const cards = gsap.utils.toArray(section.querySelectorAll(".clinical-card"))
 
-      if (window.innerWidth >= 1200) {
-        gsap.set(section, {
+        if (window.innerWidth >= 1200) {
+          gsap.set(section, {
           minHeight: "80vh",
         })
 
@@ -114,12 +118,15 @@ export default function ClinicalProcess() {
         })
 
         tl.to({}, { duration: 1.5 })
-      }
+        }
 
-      ScrollTrigger.refresh()
-    }, section)
+        ScrollTrigger.refresh()
+      }, section)
 
-    return () => ctx.revert()
+      return () => ctx.revert()
+    }, 100) // 100ms delay ensures ScrollTrigger is ready
+
+    return () => clearTimeout(timeoutId)
   }, [])
 
   return (

@@ -385,6 +385,7 @@ h2 {
   color: #C1272D;
   display: flex;
   flex-direction: column;
+  text-transform: capitalize;
 }
 h2 span {
   font-family: "Afacad-VariableFont";
@@ -571,7 +572,7 @@ p {
     transition: none !important;
   }
 }
-.btn-wrapper a {
+.btn-wrapper a ,.btn-wrapper button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -587,9 +588,10 @@ p {
   background: transparent;
   transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
 }
-.btn-wrapper a.red {
+.btn-wrapper a.red, .btn-wrapper button.red {
   background: #C1272D;
   color: #fff;
+  font-weight: normal;
 }
 
 .site-footer {
@@ -906,4 +908,29 @@ p {
       font-size: clamp(1.125rem, 0.125rem + 1.5625vw, 2rem);
       text-align: center;
       padding: 0 16%;
+}
+
+.btn-wrapper a, .btn-wrapper button {
+  transition: all 0.8s;
+  background: #C1272D;
+   color: #FFF;
+   font-weight: normal;
+}
+.btn-wrapper a svg, .btn-wrapper button svg {
+  opacity: 0;
+  transition: all 0.8s;
+  position: absolute;
+  right: 10px;
+}
+.btn-wrapper a.red, .btn-wrapper button.red {
+  color: #FFF;
+}
+.btn-wrapper a:hover svg, .btn-wrapper button:hover svg {
+  opacity: 1;
+}
+.btn-wrapper a:hover, .btn-wrapper button:hover {
+  padding-right: 90px;
+  background: #C1272D;
+  position: relative;
+ 
 }

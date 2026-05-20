@@ -161,3 +161,9 @@ top: 33%;
     height: 30px;
     width: 105px;
 }
+@media (max-width:767px) {
+.content-swiper-wrapper .swiper-wrapper .navigation {
+  bottom: -7px;
+  background: #FDFAF3;
+}  
+}
