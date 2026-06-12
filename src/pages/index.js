@@ -7,7 +7,7 @@ import ClinicalProcess from "../Components/ClinicalProcess.js"
 import FAQ from "../Components/Faq.js"
 
 import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/swiper-bundle.min.css"
+
 
 import { Pagination } from "swiper/modules";
 
