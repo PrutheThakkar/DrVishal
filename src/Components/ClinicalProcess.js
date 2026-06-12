@@ -48,86 +48,87 @@ export default function ClinicalProcess() {
 
     const section = sectionRef.current
 
-  const getStart = () => {
-  if (window.innerWidth <= 1366) return "20% 20%"
-  if (window.innerWidth <= 1440) return "top 12%"
-  return "top 20%"
-}
+    const getStart = () => {
+      if (window.innerWidth <= 1366) return "top 20%"
+      if (window.innerWidth <= 1520) return "top 16%"
+      if (window.innerWidth < 1920) return "top 12%"
+      return "top 20%"
+    }
 
     // Defer animation setup to ensure ScrollTrigger is ready and DOM is stable
     const timeoutId = setTimeout(() => {
       if (!section) return
 
       const ctx = gsap.context(() => {
-      const paragraph = section.querySelector(".paragraph-sec p")
-      const cardsContainer = section.querySelector(".cards-container")
-      const cards = gsap.utils.toArray(section.querySelectorAll(".clinical-card"))
+        const paragraph = section.querySelector(".paragraph-sec p")
+        const cardsContainer = section.querySelector(".cards-container")
+        const cards = gsap.utils.toArray(section.querySelectorAll(".clinical-card"))
 
         if (window.innerWidth >= 1200) {
           gsap.set(section, {
-          minHeight: "80vh",
-        })
+            minHeight: "80vh",
+          })
 
-        gsap.set(paragraph, {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-        })
-
-        gsap.set(cardsContainer, {
-          opacity: 0,
-        })
-
-        gsap.set(cards, {
-          x: 180,
-          opacity: 0,
-          force3D: true,
-        })
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-           start: getStart,
-          end: () => {
-            if (window.innerWidth <= 1366) return "+=950"
-            if (window.innerWidth <= 1440) return "+=1050"
-            return "+=1200"
-          },
-            scrub: 1,
-            pin: true,
-            pinSpacing: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            markers: true,
-          },
-        })
-
-        tl.to(paragraph, {
-          opacity: 0.18,
-          scale: 0.92,
-          duration: 2,
-          ease: "power1.inOut",
-        })
-
-        tl.to(
-          cardsContainer,
-          {
+          gsap.set(paragraph, {
             opacity: 1,
-            duration: 1,
+            scale: 1,
+            y: 0,
+          })
+
+          gsap.set(cardsContainer, {
+            opacity: 0,
+          })
+
+          gsap.set(cards, {
+            x: 180,
+            opacity: 0,
+            force3D: true,
+          })
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: section,
+              start: getStart,
+              end: () => {
+                if (window.innerWidth <= 1366) return "+=950"
+                if (window.innerWidth <= 1440) return "+=1050"
+                return "+=1200"
+              },
+              scrub: 1,
+              pin: true,
+              pinSpacing: true,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+              markers: true,
+            },
+          })
+
+          tl.to(paragraph, {
+            opacity: 0.18,
+            scale: 0.92,
+            duration: 2,
             ease: "power1.inOut",
-          },
-          "-=1"
-        )
+          })
 
-        tl.to(cards, {
-          x: 0,
-          opacity: 1,
-          duration: 3,
-          stagger: 0.8,
-          ease: "power2.out",
-        })
+          tl.to(
+            cardsContainer,
+            {
+              opacity: 1,
+              duration: 1,
+              ease: "power1.inOut",
+            },
+            "-=1"
+          )
 
-        tl.to({}, { duration: 1.5 })
+          tl.to(cards, {
+            x: 0,
+            opacity: 1,
+            duration: 3,
+            stagger: 0.8,
+            ease: "power2.out",
+          })
+
+          tl.to({}, { duration: 1.5 })
         }
 
         ScrollTrigger.refresh()
