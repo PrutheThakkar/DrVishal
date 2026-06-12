@@ -50,7 +50,7 @@ export default function ClinicalProcess() {
 
     const getStart = () => {
   if (window.innerWidth <= 1280) return "top 8%"
-  if (window.innerWidth <= 1440) return "top 10%"
+  if (window.innerWidth <= 1440) return "top 15%"
   return "top 15%"
 }
 

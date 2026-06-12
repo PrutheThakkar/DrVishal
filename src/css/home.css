@@ -1680,39 +1680,3 @@ height: auto;
 
 
 
-@media (min-width: 1200px) and (max-width: 1440px) {
-  .clinical-process {
-    padding: 60px 0 50px;
-  }
-
-  .clinical-process .title-wrapper {
-    margin-bottom: 35px;
-  }
-
-  .clinical-process .content-wrapper {
-    min-height: 60vh;
-    transform: translateY(-25px);
-  }
-
-  .clinical-process .cards-container {
-    gap: 28px;
-  }
-
-  .clinical-process .clinical-card {
-    height: 385px;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1280px) {
-  .clinical-process .content-wrapper {
-    transform: translateY(-35px);
-  }
-
-  .clinical-process .clinical-card {
-    height: 365px;
-  }
-
-  .clinical-process .cards-container {
-    gap: 24px;
-  }
-}
