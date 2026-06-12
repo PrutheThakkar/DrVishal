@@ -48,6 +48,12 @@ export default function ClinicalProcess() {
 
     const section = sectionRef.current
 
+    const getStart = () => {
+  if (window.innerWidth <= 1280) return "top 8%"
+  if (window.innerWidth <= 1440) return "top 10%"
+  return "top 15%"
+}
+
     // Defer animation setup to ensure ScrollTrigger is ready and DOM is stable
     const timeoutId = setTimeout(() => {
       if (!section) return

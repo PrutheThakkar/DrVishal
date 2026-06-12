@@ -934,6 +934,11 @@ p {
   position: relative;
  
 }
+@media (max-width:1280px) {
+  .btn-wrapper a:hover, .btn-wrapper button:hover{
+    padding-right: 50px;
+  }
+}
 
 
 img{

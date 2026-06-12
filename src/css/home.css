@@ -7,6 +7,11 @@
   position: relative;
   margin-top: 0;
 }
+@media (max-width:1366px) {
+  .home-hero-sec {
+    height: 400px;
+  }
+}
 @media (max-width: 920px) {
   .home-hero-sec {
     height: 550px;
@@ -1243,6 +1248,11 @@ height: auto;
 .faq-section .faq-container .faq-left {
   width: 30%;
 }
+@media (max-width:1280px) {
+  .faq-section .faq-container .faq-left a{
+    margin-bottom: 10px;
+  }
+}
 @media (max-width: 820px) {
   .faq-section .faq-container .faq-left {
     width: 70%;
@@ -1254,6 +1264,7 @@ height: auto;
   }
   .faq-section .faq-container .faq-left a{
   margin-bottom: 20px;
+  margin-bottom: 10px;
   }
 }
 
@@ -1653,4 +1664,55 @@ height: auto;
 .surgical-approach {
   position: relative;
   z-index: 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .clinical-process {
+    padding: 60px 0 50px;
+  }
+
+  .clinical-process .title-wrapper {
+    margin-bottom: 35px;
+  }
+
+  .clinical-process .content-wrapper {
+    min-height: 60vh;
+    transform: translateY(-25px);
+  }
+
+  .clinical-process .cards-container {
+    gap: 28px;
+  }
+
+  .clinical-process .clinical-card {
+    height: 385px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1280px) {
+  .clinical-process .content-wrapper {
+    transform: translateY(-35px);
+  }
+
+  .clinical-process .clinical-card {
+    height: 365px;
+  }
+
+  .clinical-process .cards-container {
+    gap: 24px;
+  }
 }
