@@ -48,10 +48,10 @@ export default function ClinicalProcess() {
 
     const section = sectionRef.current
 
-    const getStart = () => {
-  if (window.innerWidth <= 1280) return "top 8%"
-  if (window.innerWidth <= 1440) return "top 15%"
-  return "top 15%"
+  const getStart = () => {
+  if (window.innerWidth <= 1366) return "20% 20%"
+  if (window.innerWidth <= 1440) return "top 12%"
+  return "top 20%"
 }
 
     // Defer animation setup to ensure ScrollTrigger is ready and DOM is stable
@@ -87,14 +87,18 @@ export default function ClinicalProcess() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "top 20%",
-            end: "+=1200",
+           start: getStart,
+          end: () => {
+            if (window.innerWidth <= 1366) return "+=950"
+            if (window.innerWidth <= 1440) return "+=1050"
+            return "+=1200"
+          },
             scrub: 1,
             pin: true,
             pinSpacing: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
-            // markers: true,
+            markers: true,
           },
         })
 

@@ -1248,7 +1248,7 @@ height: auto;
 .faq-section .faq-container .faq-left {
   width: 30%;
 }
-@media (max-width:1280px) {
+@media (max-width:1440px) {
   .faq-section .faq-container .faq-left a{
     margin-bottom: 10px;
   }
