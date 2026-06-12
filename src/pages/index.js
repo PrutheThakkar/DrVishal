@@ -7,12 +7,11 @@ import ClinicalProcess from "../Components/ClinicalProcess.js"
 import FAQ from "../Components/Faq.js"
 
 import { Swiper, SwiperSlide } from "swiper/react"
+import SwiperCore, { Pagination } from "swiper"
+import "swiper/swiper-bundle.css"
+import "swiper/components/pagination/pagination.min.css"
 
-
-import { Pagination } from "swiper";
-
-import "swiper/css";
-import "swiper/css/pagination";
+SwiperCore.use([Pagination])
 
 import { initHomeAnimations } from "../js/homeAnimations"
 
@@ -317,7 +316,6 @@ export default function IndexPage() {
     {/* iPad and Mobile Slider Version */}
     <div className="product-list-mobile">
       <Swiper
-        modules={[Pagination]}
         spaceBetween={18}
         slidesPerView={1.15}
         centeredSlides={true}
