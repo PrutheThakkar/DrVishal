@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     }
 
     const n8nResponse = await fetch(
-      "https://pruthe.app.n8n.cloud/webhook/b31572ee-6a3f-4b46-8f1c-eda3de345b35",
+      "https://pruthe.app.n8n.cloud/webhook/6fb43adf-3be4-4ac5-a066-a61df85bef6d",
       {
         method: "POST",
         headers: {
