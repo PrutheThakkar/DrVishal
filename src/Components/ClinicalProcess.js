@@ -51,7 +51,7 @@ export default function ClinicalProcess() {
     const getStart = () => {
       if (window.innerWidth <= 1366) return "top 20%"
       if (window.innerWidth <= 1520) return "top 16%"
-      if (window.innerWidth < 1920) return "top 12%"
+      if (window.innerWidth < 1920) return "15% 12%"
       return "top 20%"
     }
 
@@ -99,7 +99,7 @@ export default function ClinicalProcess() {
               pinSpacing: true,
               anticipatePin: 1,
               invalidateOnRefresh: true,
-              markers: true,
+              // markers: true,
             },
           })
 
