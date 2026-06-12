@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -9,7 +9,14 @@ import FAQ from "../Components/Faq.js"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/swiper-bundle.min.css"
 
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 import { initHomeAnimations } from "../js/homeAnimations"
+
+
 
 const cleanExcerpt = html => {
   if (!html) return ""
@@ -287,25 +294,69 @@ export default function IndexPage() {
       </section>
 
 
-      {/* Product List Section */}
-      <section className="product-list">
-        <div className="container">
-          <ul>
-            {matrixList.map((item, index) => (
-              <li key={index}>
-                <p>{item.matrixTitle}</p>
-                <div className="img-wrap">
-                  {/* Render dynamic images using GatsbyImage */}
-                  <GatsbyImage
-                    image={item.matrixImage.node.gatsbyImage} // Pass the image data
-                    alt={item.matrixImage.node.altText} // Use the alt text from the query
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+    {/* Product List Section */}
+<section className="product-list">
+  <div className="container">
+
+    {/* Desktop Version */}
+    <ul className="product-list-desktop">
+      {matrixList.map((item, index) => (
+        <li key={index}>
+          <p>{item.matrixTitle}</p>
+
+          <div className="img-wrap">
+            <GatsbyImage
+              image={item.matrixImage.node.gatsbyImage}
+              alt={item.matrixImage.node.altText || item.matrixTitle}
+            />
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    {/* iPad and Mobile Slider Version */}
+    <div className="product-list-mobile">
+      <Swiper
+        modules={[Pagination]}
+        spaceBetween={18}
+        slidesPerView={1.15}
+        centeredSlides={true}
+        pagination={{ clickable: true }}
+        breakpoints={{
+          480: {
+            slidesPerView: 1.25,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 1.55,
+            spaceBetween: 24,
+          },
+          900: {
+            slidesPerView: 2,
+            spaceBetween: 26,
+          },
+        }}
+        className="product-swiper"
+      >
+        {matrixList.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="product-slide-card">
+              <div className="product-slide-img">
+                <GatsbyImage
+                  image={item.matrixImage.node.gatsbyImage}
+                  alt={item.matrixImage.node.altText || item.matrixTitle}
+                />
+              </div>
+
+              <p>{item.matrixTitle}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+
+  </div>
+</section>
 
       <ClinicalProcess />
 

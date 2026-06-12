@@ -101,7 +101,7 @@ const InsightsListingPage = ({ data }) => {
         <FAQ limit={10} />
       </div>
 
-      <section className="bottom-section">
+      <section className="bottom-section faq">
         <div className="container">
           <h3>Don’t see the answer you need?</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

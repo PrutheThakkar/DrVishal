@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 import { Link, graphql } from "gatsby"
 import Layout from "../Components/Layout.js"
+import vishalMap from "../images/vishal-map.jpg"
 
 const RequestAppointmentPage = ({ data }) => {
   const page = data?.wpPage
@@ -212,7 +213,7 @@ const RequestAppointmentPage = ({ data }) => {
             <div className="wrapper">
               <div className="left">
                 <div className="img-wrapp">
-                  <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/map-img.jpg" alt="" />
+                  <img src={vishalMap} alt="map" />
                 </div>
               </div>
 

@@ -9,7 +9,7 @@ const InsideBanner = ({ title, showAboutList = false }) => {
 
         {title && <h1 dangerouslySetInnerHTML={{ __html: title }} />}
 
-        {showAboutList && (
+        {/* {showAboutList && (
           <ul className="about-banner-list">
             <li>
               <span>14+</span>
@@ -24,7 +24,7 @@ const InsideBanner = ({ title, showAboutList = false }) => {
               <p>Consultant</p>
             </li>
           </ul>
-        )}
+        )} */}
       </div>
         </div>
       </div>

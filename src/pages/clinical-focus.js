@@ -87,7 +87,7 @@ const ClinicalFocusPage = ({ data }) => {
       <section className="bottom-section">
         <div className="container">
           <h3>Don&apos;t see the answer you need?</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Contact Dr. Vishal Pingle for more details</p>
           <div className="btn-wrapper">
             <Link to="/contact" className="read-all-btn">
               Contact Now <svg

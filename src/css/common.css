@@ -934,3 +934,9 @@ p {
   position: relative;
  
 }
+
+
+img{
+  border-radius: 20px;
+  overflow: hidden;
+}

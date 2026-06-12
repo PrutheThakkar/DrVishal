@@ -2,10 +2,16 @@
 .product-list li .img-wrap{
     z-index: 0;
 }
-
+.inside-faq{
+    background: #C1272D;
+}
+.inside-faq p, .inside-faq h2, .inside-faq .faq-question-text, .inside-faq .faq-answer-text{
+   color: #fff;
+}
 .inside-faq .faq-section .faq-left{
 display: none;
 }
 .inside-faq .faq-section .faq-right{
 width: 100%;
 }
+
