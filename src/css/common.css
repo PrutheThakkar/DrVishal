@@ -463,6 +463,7 @@ section {
   border-radius: 20px;
   transition: all 0.8s;
   box-shadow: 0 8px 24px rgb(243 215 215 / 68%);;
+  background: none;
 }
 
 .brand {

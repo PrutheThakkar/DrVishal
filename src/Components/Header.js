@@ -586,6 +586,7 @@ const Header = () => {
             width: calc(100% - 28px);
             padding: 10px 12px 10px 16px;
             border-radius: 18px;
+            background:none;
           }
 
           .mobile-menu {
