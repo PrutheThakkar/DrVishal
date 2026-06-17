@@ -295,6 +295,17 @@ export default function IndexPage() {
 }, [])
 
   return (
+    <>
+      {/* ═══════════════════════════════════════════
+               PRELOADER
+          ═══════════════════════════════════════════ */}
+          <div id="preloader">
+            <p className="pre-tagline">Welcome to</p>
+            <h1 className="pre-title">Dr. Vishal Pingle's website</h1>
+            <div className="pre-bar-wrap">
+              <div className="pre-bar" id="preBar"></div>
+            </div>
+          </div>
     <Layout>
       <section className="home-hero-sec" >
         <div className="container">
@@ -561,8 +572,7 @@ export default function IndexPage() {
                   key={node.id}
                   className="blog-card"
                   data-aos="fade-up"
-                  data-aos-delay={index * 150}
-                  data-aos-duration="700"
+                  
                 >
                   <div className="blog-img">
                     {image ? (
@@ -619,5 +629,6 @@ export default function IndexPage() {
 
       <FAQ limit={4} />
     </Layout>
+    </>
   )
 }

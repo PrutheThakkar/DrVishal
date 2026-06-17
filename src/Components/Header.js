@@ -117,16 +117,7 @@ React.useEffect(() => {
 
   return (
     <>
-      {/* ═══════════════════════════════════════════
-           PRELOADER
-      ═══════════════════════════════════════════ */}
-      <div id="preloader">
-        <p className="pre-tagline">Welcome to</p>
-        <h1 className="pre-title">Dr. Vishal Pingle's website</h1>
-        <div className="pre-bar-wrap">
-          <div className="pre-bar" id="preBar"></div>
-        </div>
-      </div>
+    
 
       <header
         className={`site-header ${isScrolled ? "is-scrolled" : ""}`}

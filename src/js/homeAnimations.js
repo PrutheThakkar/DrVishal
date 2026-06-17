@@ -32,15 +32,20 @@ function initDesktopAnimations() {
     });
   }
 
-  if (hasElement(".img-wrap")) {
-    gsap.from(".img-wrap", {
-      scale: 0.5,
-      opacity: 0.3,
-      duration: 2,
-      ease: "power2.out",
-    });
-  }
+if (hasElement(".img-wrap")) {
+  gsap.set(".img-wrap", {
+    autoAlpha: 0,
+    scale: 0.5,
+  });
 
+  gsap.to(".img-wrap", {
+    autoAlpha: 1,
+    scale: 1,
+    duration: 2,
+    ease: "power2.out",
+    delay: 0.1,
+  });
+}
   // Hero Section
   if (hasElement(".home-hero-sec")) {
     gsap.to(".site-header", {

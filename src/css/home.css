@@ -37,6 +37,15 @@
     height: 600px;
   }
 }
+
+.home-hero-sec .img-wrap {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5);
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
 .home-hero-sec .container {
   height: 100%;
 }
