@@ -112,7 +112,7 @@ const scrollToFaqSection = useCallback(() => {
   }
 
   return (
-    <section id="inside-faq" className="faq-section">
+    <section id="inside-faq" className="faq-section" data-aos="fade-up">
       <div className="container">
         <div className="div-title">
           <h2>
@@ -120,7 +120,7 @@ const scrollToFaqSection = useCallback(() => {
             <span>Answers to Your Questions About Heart & Lung Care</span>
           </h2>
 
-          <p className="faq-para">
+          <p className="faq-para" data-aos="fade-up">
             Understanding your condition, treatment options, and recovery can
             make a huge difference in confidence and outcomes. Here are answers
             to the most common questions patients and families ask about cardiac
@@ -129,7 +129,7 @@ const scrollToFaqSection = useCallback(() => {
         </div>
 
         <div className="faq-container">
-          <div className="faq-left">
+          <div className="faq-left" data-aos="fade-up">
             <h3 className="faq-title">Don't see the answer you need?</h3>
 
             <p className="faq-description">
@@ -151,7 +151,7 @@ const scrollToFaqSection = useCallback(() => {
             </div>
           </div>
 
-          <div className="faq-right">
+          <div className="faq-right" data-aos="fade-up">
             <div className="faq-items">
               {faqData.map((faq, index) => (
                 <div

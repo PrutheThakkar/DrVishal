@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
+import { useLayoutEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -270,18 +273,23 @@ export default function IndexPage() {
     }
   }, [])
 
+
   return (
     <Layout>
-      <section className="home-hero-sec">
+      <section className="home-hero-sec" >
         <div className="container">
-          <div id="imgHeart" className="img-wrap">
+          <div
+            id="imgHeart"
+            className="img-wrap"
+           
+          >
             <img srcSet={heroImageSrcSet} alt={heroAltText} />
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="about-section">
+      <section className="about-section" data-aos="fade-up">
         <div className="container">
           <div className="img-wrap">
             <img src={globallyInspiredSvg} alt={globallyInspiredAltText} />
@@ -322,7 +330,7 @@ export default function IndexPage() {
       </section>
 
       {/* Practice Philosophy Section */}
-      <section className="practice-section">
+      <section className="practice-section" data-aos="fade-up">
         <div className="title-wrapper">
           <h2>
             {practiceTitle}
@@ -331,24 +339,24 @@ export default function IndexPage() {
         </div>
 
         <div className="paragraph-wrapper">
-          <div className="left">
+          <div className="left" data-aos="fade-right">
             <img
               src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/02/practice-left-image-heart.png"
               alt="Fallback Image"
             />
           </div>
 
-          <div className="right">
+          <div className="right" data-aos="fade-left">
             <p>{rightText}</p>
           </div>
         </div>
       </section>
 
       {/* Product List Section */}
-      <section className="product-list">
+      <section className="product-list" data-aos="fade-up">
         <div className="container">
           {/* Desktop Version */}
-          <ul className="product-list-desktop">
+          <ul className="product-list-desktop ">
             {matrixList.map((item, index) => (
               <li key={index}>
                 <p>{item.matrixTitle}</p>
@@ -364,7 +372,7 @@ export default function IndexPage() {
           </ul>
 
           {/* iPad and Mobile Slider Version */}
-          <div className="product-list-mobile">
+          <div className="product-list-mobile" data-aos="fade-up">
             <Swiper
               key={matrixList.length}
               spaceBetween={18}
@@ -430,7 +438,7 @@ export default function IndexPage() {
             >
               {matrixList.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="product-slide-card">
+                  <div className="product-slide-card" data-aos="fade-up">
                     <div className="product-slide-img">
                       <GatsbyImage
                         image={item.matrixImage.node.gatsbyImage}
@@ -466,7 +474,7 @@ export default function IndexPage() {
                     setActiveProductIndex(index)
                   }}
                 />
-                
+
               ))}
             </div>
           </div>
@@ -476,21 +484,21 @@ export default function IndexPage() {
       <ClinicalProcess />
 
       {/* Surgical Approach Section */}
-      <div className="title-wrapper">
-        <h2>
+      <div className="title-wrapper" data-aos="fade-up">
+        <h2 data-aos="fade-up">
           {surgicalApproachTitle}
           <span>{surgicalApproachSubtitle}</span>
         </h2>
       </div>
 
-      <section className="sergical-approach">
+      <section className="sergical-approach" data-aos="fade-up">
         <div className="container">
           <div className="sergical-swiper">
-            <div className="left">
+            <div className="left" data-aos="fade-up">
               <p>{surgicalApproachLeftContent}</p>
             </div>
 
-            <div className="right">
+            <div className="right" data-aos="fade-up">
               <div className="middle-text">
                 <p dangerouslySetInnerHTML={{ __html: listMiddleText }} />
               </div>
@@ -511,7 +519,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section className="blog-section">
+      <section className="blog-section" data-aos="fade-up">
         <div className="container">
           <div className="title-wrapper">
             <h2>
@@ -523,13 +531,19 @@ export default function IndexPage() {
           </div>
 
           <div className="blog-cards-container desktop-blog">
-            {posts.map(({ node }) => {
+            {posts.map(({ node }, index) => {
               const image = node.featuredImage?.node?.gatsbyImage
               const imageAlt = node.featuredImage?.node?.altText || node.title
               const excerptText = cleanExcerpt(node.excerpt)
 
               return (
-                <div key={node.id} className="blog-card">
+                <div
+                  key={node.id}
+                  className="blog-card"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 150}
+                  data-aos-duration="700"
+                >
                   <div className="blog-img">
                     {image ? (
                       <GatsbyImage image={image} alt={imageAlt} />
@@ -546,10 +560,7 @@ export default function IndexPage() {
 
                     <p className="blog-card-description">{excerptText}</p>
 
-                    <Link
-                      to={`/insights/${node.slug}/`}
-                      className="read-more-btn"
-                    >
+                    <Link to={`/insights/${node.slug}/`} className="read-more-btn">
                       Read More
                     </Link>
                   </div>

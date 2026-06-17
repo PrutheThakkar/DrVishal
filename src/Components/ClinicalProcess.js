@@ -48,6 +48,11 @@ export default function ClinicalProcess() {
 
     const section = sectionRef.current
 
+    if (window.innerWidth <= 767) {
+      ScrollTrigger.getAll().forEach(trigger => trigger.refresh())
+      return
+    }
+
     const getStart = () => {
       if (window.innerWidth <= 1366) return "15% 20%"
       if (window.innerWidth <= 1520) return "15% 16%"
@@ -55,14 +60,15 @@ export default function ClinicalProcess() {
       return "top 20%"
     }
 
-    // Defer animation setup to ensure ScrollTrigger is ready and DOM is stable
     const timeoutId = setTimeout(() => {
       if (!section) return
 
       const ctx = gsap.context(() => {
         const paragraph = section.querySelector(".paragraph-sec p")
         const cardsContainer = section.querySelector(".cards-container")
-        const cards = gsap.utils.toArray(section.querySelectorAll(".clinical-card"))
+        const cards = gsap.utils.toArray(
+          section.querySelectorAll(".clinical-card")
+        )
 
         if (window.innerWidth >= 1200) {
           gsap.set(section, {
@@ -99,7 +105,6 @@ export default function ClinicalProcess() {
               pinSpacing: true,
               anticipatePin: 1,
               invalidateOnRefresh: true,
-              // markers: true,
             },
           })
 
@@ -135,7 +140,7 @@ export default function ClinicalProcess() {
       }, section)
 
       return () => ctx.revert()
-    }, 100) // 100ms delay ensures ScrollTrigger is ready
+    }, 100)
 
     return () => clearTimeout(timeoutId)
   }, [])
@@ -149,7 +154,7 @@ export default function ClinicalProcess() {
       </div>
 
       <div className="content-wrapper">
-        <div className="paragraph-sec">
+        <div className="paragraph-sec" data-aos="fade-up">
           <p>
             Dr. Pingle travels internationally to learn emerging cardiac
             techniques and bring them home to India. From robotic surgery in
@@ -160,7 +165,14 @@ export default function ClinicalProcess() {
 
         <div className="cards-container">
           {clinicalCards.map((card, index) => (
-            <div className="card clinical-card" key={index}>
+            <div
+              className="card clinical-card"
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+              data-aos-duration="700"
+              data-aos-once="true"
+            >
               <div className="card-image">
                 <img src={card.image} alt={card.alt} />
               </div>
