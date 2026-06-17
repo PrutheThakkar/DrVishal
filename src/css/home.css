@@ -9,16 +9,18 @@
 }
 @media (max-width:1366px) {
   .home-hero-sec {
-    height: 400px;
+    height: 500px;
+    padding-top: 100px;
   }
 }
-@media (max-width: 920px) {
+@media (max-width: 1000px) {
   .home-hero-sec {
     height: 550px;
     position: absolute;
     opacity: 0.9;
     z-index: -1;
     top: 12%;
+    padding-top: 0;
   }
   .home-hero-sec::before {
     content: "";
@@ -26,6 +28,7 @@
     width: 100%;
     height: 100%;
     background: rgba(253, 250, 243, 0.8);
+    z-index: 9;
   }
 }
 @media (max-width: 768px) {
@@ -90,11 +93,20 @@
     padding: 40px 0;
   }
 }
+@media (max-width: 1190px) {
+  .about-section {
+    height: auto;
+    min-height: 550px;
+    padding: 40px 0;
+    margin-bottom: 100px;
+  }
+}
 @media (max-width: 768px) {
   .about-section {
     min-height: auto;
     height: 500px;
     padding: 30px 0;
+     margin-bottom: 50px;
   }
 }
 @media (max-width: 767px) {
@@ -491,6 +503,7 @@
 .product-list-mobile .product-custom-pagination{
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .product-list-mobile .product-custom-pagination .product-pagination-bullet {
@@ -906,6 +919,117 @@
   font-size: clamp(1.125rem, 0.375rem + 0.9375vw, 1.5rem);
   margin-bottom: 0;
 }
+
+
+
+/* Fresh mobile view for Surgical Approach */
+@media (max-width: 767px) {
+  .sergical-approach {
+    margin-top: 40px;
+    padding: 56px 0;
+    background: #c1272d;
+  }
+
+  .sergical-swiper {
+    margin: 0;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .sergical-swiper .left {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .sergical-swiper .left p {
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+
+  .sergical-swiper .right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sergical-swiper .right .middle-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: calc(100% - 32px);
+    max-width: 340px;
+    margin: 0 auto 24px;
+    padding: 22px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+  }
+
+  .sergical-swiper .right .middle-text p {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .sergical-swiper .right .surgery-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 16px;
+  }
+
+  .sergical-swiper .right .surgery-section::before {
+    display: none;
+  }
+
+  .sergical-swiper .right .surgery-section li {
+    width: 100%;
+    padding: 22px 20px;
+    list-style: none;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+  }
+
+  .sergical-swiper .right .surgery-section li:nth-child(even) {
+    text-align: left;
+  }
+
+  .sergical-swiper .right .surgery-section li .sergery-list {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .sergical-swiper .right .surgery-section li .index {
+    min-width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  .sergical-swiper .right .surgery-section li p {
+    margin: 0;
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.4;
+  }
+}
+
+
+
+
 
 .international-training {
   margin-top: 120px;
