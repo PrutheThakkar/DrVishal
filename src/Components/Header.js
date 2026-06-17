@@ -482,7 +482,7 @@ const Header = () => {
         .mobile-menu__link {
           color: #c1272d;
           text-decoration: none;
-          font-size: clamp(2rem, 7vw, 3.8rem);
+          font-size: clamp(0.75rem, 7vw, 1rem);
           line-height: 1.05;
           font-weight: 500;
           letter-spacing: -0.04em;
@@ -604,7 +604,7 @@ const Header = () => {
           }
 
           .mobile-menu__link {
-            font-size: clamp(2rem, 9vw, 3.4rem);
+            font-size: clamp(0.75rem, 9vw, 2rem);
           }
 
           .mobile-menu__cta {

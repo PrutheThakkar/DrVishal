@@ -955,3 +955,6 @@ img{
   border-radius: 20px;
   overflow: hidden;
 }
+p:last-child{
+  margin-bottom: 0;
+}

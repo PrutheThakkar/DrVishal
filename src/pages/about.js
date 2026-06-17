@@ -16,7 +16,7 @@ const AboutPage = ({ data }) => {
   title={insidePage?.pageTitle}
   showAboutList={true}
 />
-  <section className="about-new-exp">
+  <section className="about-new-exp"  data-aos="fade-up">
   <div className="container">
     <ul className="about-banner-list">
       <li>

@@ -20,9 +20,12 @@
 @media (max-width:767px) {
   .Dr-vishal-pingale .container .img-wrap{
     height: 300px !important;
+  
+
   }
   .Dr-vishal-pingale .container .img-wrap.journey{
     height: auto !important;
+    margin-top: 30px;
   }
 }
 .Dr-vishal-pingale .container .img-wrap img {
@@ -146,6 +149,11 @@ ul.list-od-degree{
   width: 95%;
   margin: 0 auto;
   margin-bottom: 60px;
+}
+@media (max-width:767px) {
+  ul.list-od-degree{
+    margin-bottom: 20px;
+  }
 }
 @media (max-width:1000px) {
   ul.list-od-degree li{

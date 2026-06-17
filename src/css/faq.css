@@ -129,6 +129,9 @@
 .faq-section .faq-item.active .faq-icon {
   transform: rotate(180deg);
 }
+.faq-section .faq-item.active .faq-icon svg {
+  fill: #FF875A;
+}
 .faq-section .faq-item.active .faq-answer {
   max-height: 500px;
   padding-bottom: 28px;
@@ -173,6 +176,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.faq-section .faq-icon svg {
+fill: #fff;
 }
 .faq-section .faq-answer {
   max-height: 0;

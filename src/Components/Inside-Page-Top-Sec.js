@@ -2,30 +2,25 @@ import React from "react"
 
 const InsideBanner = ({ title, showAboutList = false }) => {
   return (
-    <section className="inside-banner">
+    <section
+      className="inside-banner"
+      data-aos="wave-reveal"
+      data-aos-duration="1600"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="true"
+    >
       <div className="container">
         <div className="title-wrap">
-      <div className="wrap">
-
-        {title && <h1 dangerouslySetInnerHTML={{ __html: title }} />}
-
-        {/* {showAboutList && (
-          <ul className="about-banner-list">
-            <li>
-              <span>14+</span>
-              <p>Published Work</p>
-            </li>
-            <li>
-              <span>16</span>
-              <p>International Conferences</p>
-            </li>
-            <li>
-              <span>Multi-Hospital</span>
-              <p>Consultant</p>
-            </li>
-          </ul>
-        )} */}
-      </div>
+          <div className="wrap">
+            {title && (
+              <h1
+                dangerouslySetInnerHTML={{ __html: title }}
+               
+               
+               
+              />
+            )}
+          </div>
         </div>
       </div>
     </section>
