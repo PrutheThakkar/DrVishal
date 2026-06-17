@@ -61,20 +61,13 @@ const ClinicalFocusPage = ({ data }) => {
         <div className="container">
           <div className="title-wrapper">
             <h2>
-              Cardiac &amp; Thoracic Expertise
+              {insidePage.insidePageTopTitle}
               <span>
-                Advanced Cardiac &amp; Thoracic Care, Delivered with Precision
+                {insidePage.insidePageTopSubtitle}
               </span>
             </h2>
           </div>
-
-          <p>
-            At Revive Heart Institute, every procedure is designed with patient
-            safety, comfort, and long-term outcomes in mind. Dr. Vishal Pingle
-            combines global expertise with hands-on experience, ensuring that
-            even complex interventions are approached with clarity and
-            precision.
-          </p>
+          <span dangerouslySetInnerHTML={{ __html: insidePage.insidePageTopParagraph }} />
         </div>
       </section>
 

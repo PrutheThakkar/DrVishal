@@ -68,9 +68,9 @@ const AboutPage = ({ data }) => {
         <div className="container">
           <div className="title-wrapper">
             <h2 data-aos="fade-up">
-              Who Dr. Vishal Pingle Is
+              {insidePage.insidePageTopTitle}
               <span>
-                Globally Trained. Lifelong Learner. Compassionate Surgeon.
+                {insidePage.insidePageTopTitle}
               </span>
             </h2>
           </div>

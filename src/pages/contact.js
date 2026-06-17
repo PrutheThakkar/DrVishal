@@ -60,26 +60,19 @@ const RequestAppointmentPage = ({ data }) => {
         <InsideBanner
           title={insidePage?.pageTitle} />
         {/* Intro Section */}
-        <section className="Dr-vishal-pingale" data-aos="fade-up">
-          <div className="container">
-            <div className="title-wrapper">
-              <h2>
-                Request Appointment
-                <span>
-                  Speak directly with a surgeon who will be responsible for your
-                  care
-                </span>
-              </h2>
-            </div>
-
-            <p>
-              Whether you are exploring options, facing surgery, or seeking a
-              second opinion, this is where the process begins. Your request is
-              reviewed personally so that your consultation is relevant, prepared,
-              and grounded in your real medical situation.
-            </p>
+       <section className="Dr-vishal-pingale" data-aos="fade-up">
+        <div className="container">
+          <div className="title-wrapper">
+            <h2>
+              {insidePage.insidePageTopTitle}
+              <span>
+                {insidePage.insidePageTopSubtitle}
+              </span>
+            </h2>
           </div>
-        </section>
+          <span dangerouslySetInnerHTML={{ __html: insidePage.insidePageTopParagraph }} />
+        </div>
+      </section>
 
         {/* Contact Form Section */}
         <section className="contact-section" data-aos="fade-up">
