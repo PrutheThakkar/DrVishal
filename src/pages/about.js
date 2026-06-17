@@ -132,7 +132,7 @@ const AboutPage = ({ data }) => {
             </li>
           </ul>
 
-          <p data-aos="fade-up">
+          <p className="map-text" data-aos="fade-up">
             From the very start of his medical career, Dr. Pingle recognized
             that mastery in cardiac surgery requires continuous learning. He
             pursued advanced fellowships in the <span>UK</span>,{" "}
@@ -143,16 +143,19 @@ const AboutPage = ({ data }) => {
             outcomes that meet international standards.
           </p>
 
-          <div className="img-wrap journey" data-aos="fade-up">
-            <StaticImage
-              src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/map-new-img.png"
-              alt="Map Image"
-              placeholder="blurred"
-              layout="constrained"
-              height={565}
-              width={1716}
-            />
-          </div>
+         <div className="img-wrap journey" data-aos="fade-up">
+  <picture>
+    <source
+      media="(max-width: 767px)"
+      srcSet="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/06/Fellowship-Journey.png"
+    />
+
+    <img
+      src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/map-new-img.png"
+      alt="Map Image"
+    />
+  </picture>
+</div>
         </div>
       </section>
 

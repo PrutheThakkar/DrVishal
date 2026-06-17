@@ -404,3 +404,22 @@ p span{
     font-size: 1rem;
   }
 }
+
+
+.journey picture,
+.journey picture img {
+  width: 100%;
+  display: block;
+}
+
+.journey picture img {
+  height: auto;
+}
+@media (max-width:767px) {
+  .map-text{
+    margin-bottom: 0;
+  }
+  .Dr-vishal-pingale .container .img-wrap.journey{
+  margin-top: 0 !important;
+  }
+}
