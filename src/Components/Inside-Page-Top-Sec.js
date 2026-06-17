@@ -15,9 +15,9 @@ const InsideBanner = ({ title, showAboutList = false }) => {
             {title && (
               <h1
                 dangerouslySetInnerHTML={{ __html: title }}
-               
-               
-               
+                data-aos="fade-in"
+                data-aos-delay="650"
+                data-aos-duration="900"
               />
             )}
           </div>

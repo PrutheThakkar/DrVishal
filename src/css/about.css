@@ -326,6 +326,7 @@ p span{
 @media (max-width: 767px) {
   .about-new-exp {
     padding: 40px 0;
+    padding-bottom: 0;
   }
 
   .about-new-exp .container {
@@ -343,7 +344,7 @@ p span{
     width: 100%;
     justify-content: flex-start;
     gap: 22px;
-    padding: 24px 0;
+    padding: 10px 0;
   }
 
   .about-banner-list li:first-child {
@@ -383,7 +384,7 @@ p span{
 /* Small Mobile */
 @media (max-width: 480px) {
   .about-banner-list {
-    padding: 24px 20px;
+    padding: 10px 10px;
   }
 
   .about-banner-list li {
@@ -391,12 +392,12 @@ p span{
   }
 
   .about-exp-icon svg {
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
   }
 
   .about-exp-content span {
-    font-size: 1.55rem;
+    font-size: 1rem;
   }
 
   .about-exp-content p {

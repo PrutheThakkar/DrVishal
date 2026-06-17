@@ -57,7 +57,7 @@ const ClinicalFocusPage = ({ data }) => {
       <InsideBanner title={insidePage?.pageTitle} />
 
       {/* ── Intro ── */}
-      <section className="Dr-vishal-pingale">
+      <section className="Dr-vishal-pingale" data-aos="fade-up">
         <div className="container">
           <div className="title-wrapper">
             <h2>
@@ -79,12 +79,12 @@ const ClinicalFocusPage = ({ data }) => {
       </section>
 
       {/* ── Tab Swiper Coronary — separate component ── */}
-      <TabSwiperCoronary />
+      <TabSwiperCoronary  />
 
 
 
       {/* ── Bottom CTA ── */}
-      <section className="bottom-section">
+      <section className="bottom-section" data-aos="fade-up">
         <div className="container">
           <h3>Don&apos;t see the answer you need?</h3>
           <p>Contact Dr. Vishal Pingle for more details</p>

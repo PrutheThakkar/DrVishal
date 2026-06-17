@@ -467,6 +467,18 @@ section {
   background: none;
 }
 
+@media (max-width:767px) {
+  .is-scrolled .site-header__inner .brand{
+    visibility: hidden;
+  }
+  .site-header__inner, .site-header.is-scrolled .site-header__inner{
+    backdrop-filter: blur(0) !important;
+    border: none;
+    background: none;
+    box-shadow: none !important;
+  }
+}
+
 .brand {
   display: inline-flex;
   align-items: center;

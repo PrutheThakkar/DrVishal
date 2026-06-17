@@ -67,7 +67,7 @@ const AboutPage = ({ data }) => {
       <section className="Dr-vishal-pingale">
         <div className="container">
           <div className="title-wrapper">
-            <h2>
+            <h2 data-aos="fade-up">
               Who Dr. Vishal Pingle Is
               <span>
                 Globally Trained. Lifelong Learner. Compassionate Surgeon.
@@ -75,7 +75,7 @@ const AboutPage = ({ data }) => {
             </h2>
           </div>
 
-          <div className="img-wrap">
+          <div className="img-wrap" data-aos="fade-up">
             <StaticImage
               src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/about-dr-img.webp"
               alt="Dr. Vishal Pingle"
@@ -84,7 +84,7 @@ const AboutPage = ({ data }) => {
             />
           </div>
 
-          <p>
+          <p data-aos="fade-up">
             Dr. Vishal N. Pingle is an internationally trained cardiothoracic
             surgeon and Director of Revive Heart Institute, Mumbai. With
             expertise spanning heart and lung transplants, minimally invasive
@@ -92,7 +92,7 @@ const AboutPage = ({ data }) => {
             world-class technical skill with patient-centered care.
           </p>
 
-          <ul className="list-od-degree">
+          <ul className="list-od-degree" data-aos="fade-up">
             <li>
               <div>
                 <img
@@ -132,7 +132,7 @@ const AboutPage = ({ data }) => {
             </li>
           </ul>
 
-          <p>
+          <p data-aos="fade-up">
             From the very start of his medical career, Dr. Pingle recognized
             that mastery in cardiac surgery requires continuous learning. He
             pursued advanced fellowships in the <span>UK</span>,{" "}
@@ -143,7 +143,7 @@ const AboutPage = ({ data }) => {
             outcomes that meet international standards.
           </p>
 
-          <div className="img-wrap journey">
+          <div className="img-wrap journey" data-aos="fade-up">
             <StaticImage
               src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/map-new-img.png"
               alt="Map Image"
@@ -158,7 +158,7 @@ const AboutPage = ({ data }) => {
 
       <section className="infro-section">
         <div className="container">
-          <div className="left">
+          <div className="left" data-aos="fade-up">
             <p>
               Beyond his technical skills, Dr. Pingle is known for his
               compassionate approach, ensuring patients and families are guided
@@ -167,7 +167,7 @@ const AboutPage = ({ data }) => {
             </p>
           </div>
 
-          <div className="right">
+          <div className="right" data-aos="fade-right">
             <div className="img-wrapper">
               <StaticImage
                 src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/beyong-sec-img.webp"
@@ -183,13 +183,13 @@ const AboutPage = ({ data }) => {
       <section className="clinical-philosophy">
         <div className="container">
           <div className="title-wrapper">
-            <h2>
+            <h2 data-aos="fade-up">
               Clinical Philosophy &amp; Expertise
               <span>Precision, Innovation, and Care Guided by Evidence</span>
             </h2>
           </div>
 
-          <div className="img-wrap">
+          <div className="img-wrap" data-aos="fade-up">
             <StaticImage
               src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/clinical-philosophy-img.webp"
               alt="Clinical Philosophy"
@@ -198,7 +198,7 @@ const AboutPage = ({ data }) => {
             />
           </div>
 
-          <p>
+          <p data-aos="fade-up">
             Dr. Pingle believes that the best outcomes come from aligning
             treatment intensity with disease severity. Not every heart or lung
             condition requires surgery; sometimes medical management or
@@ -209,7 +209,7 @@ const AboutPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="Dr-vishal-pingale">
+      <section className="Dr-vishal-pingale" data-aos="fade-up">
         <div className="container">
           <div className="title-wrapper">
             <h2>
@@ -218,7 +218,7 @@ const AboutPage = ({ data }) => {
             </h2>
           </div>
 
-          <p>
+          <p data-aos="fade-up">
             Dr. Pingle believes that the best outcomes come from aligning
             treatment intensity with disease severity. Not every heart or lung
             condition requires surgery; sometimes medical management or
@@ -227,7 +227,7 @@ const AboutPage = ({ data }) => {
             while minimizing risk.
           </p>
 
-          <p>
+          <p data-aos="fade-up">
             By combining <span>global expertise, surgical excellence</span>, and{" "}
             <span>genuine empathy</span>, Dr. Pingle ensures that every patient
             receives care that is both advanced and personally meaningful,

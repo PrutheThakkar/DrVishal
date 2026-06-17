@@ -15,7 +15,7 @@ const PatientStoriesPage = ({data}) => {
   title={insidePage?.pageTitle}/>
 
       {/* Content Section */}
-      <section className="Dr-vishal-pingale">
+      <section className="Dr-vishal-pingale" data-aos="fade-up">
         <div className="container">
           <div className="title-wrapper">
             <h2>

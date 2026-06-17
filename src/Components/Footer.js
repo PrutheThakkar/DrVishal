@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 
 const Footer = () => {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" data-aos="fade-up">
       <div className="container">
         <div className="footer-inner">
           {/* Left */}

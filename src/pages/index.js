@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -7,15 +7,12 @@ import ClinicalProcess from "../Components/ClinicalProcess.js"
 import FAQ from "../Components/Faq.js"
 
 import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, { Pagination } from "swiper"
-import "swiper/swiper-bundle.css"
-import "swiper/components/pagination/pagination.min.css"
+import { Pagination } from "swiper/modules"
 
-SwiperCore.use([Pagination])
+import "swiper/css"
+import "swiper/css/pagination"
 
 import { initHomeAnimations } from "../js/homeAnimations"
-
-
 
 const cleanExcerpt = html => {
   if (!html) return ""
@@ -41,184 +38,244 @@ const cleanExcerpt = html => {
 }
 
 export default function IndexPage() {
-  // Fetch data using GraphQL
   const data = useStaticQuery(graphql`
-   query MyQuery {
-  allWpPage(filter: {databaseId: {eq: 30}}) {
-    edges {
-      node {
-        title
-        slug
-        home {
-          heartImage {
-            node {
-              altText
-              gatsbyImage(
-                layout: CONSTRAINED
-                height: 1001
-                width: 1001
-                placeholder: BLURRED
-              )
-            }
-          }
-          title
-          subtitle
-          rightText
-          leftImage {
-            node {
-              altText
-              gatsbyImage(
-                height: 200
-                width: 389
-                quality: 10
-                placeholder: BLURRED
-                layout: CONSTRAINED
-              )
-            }
-          }
-          globallyInspiredSvg {
-            node {
-              altText
-              mediaItemUrl
-            }
-          }
-          content
-          link {
-            linkTitle
-            linkUrl
-          }
-          matrixList {
-            matrixTitle
-            matrixImage {
-              node {
-                altText
-                gatsbyImage(layout: CONSTRAINED, height: 412, width: 380, placeholder: BLURRED)
+    query MyQuery {
+      allWpPage(filter: { databaseId: { eq: 30 } }) {
+        edges {
+          node {
+            title
+            slug
+            home {
+              heartImage {
+                node {
+                  altText
+                  gatsbyImage(
+                    layout: CONSTRAINED
+                    height: 1001
+                    width: 1001
+                    placeholder: BLURRED
+                  )
+                }
+              }
+              title
+              subtitle
+              rightText
+              leftImage {
+                node {
+                  altText
+                  gatsbyImage(
+                    height: 200
+                    width: 389
+                    quality: 10
+                    placeholder: BLURRED
+                    layout: CONSTRAINED
+                  )
+                }
+              }
+              globallyInspiredSvg {
+                node {
+                  altText
+                  mediaItemUrl
+                }
+              }
+              content
+              link {
+                linkTitle
+                linkUrl
+              }
+              matrixList {
+                matrixTitle
+                matrixImage {
+                  node {
+                    altText
+                    gatsbyImage(
+                      layout: CONSTRAINED
+                      height: 412
+                      width: 380
+                      placeholder: BLURRED
+                    )
+                  }
+                }
+              }
+              clinicalFocusAreasTitle
+              clinicalFocusAreasSubtitle
+              clinicalFocusAreasDescription
+              clinicalFocusList {
+                clinicalFocusListImage {
+                  node {
+                    altText
+                    gatsbyImage(
+                      layout: CONSTRAINED
+                      height: 10
+                      width: 10
+                      placeholder: BLURRED
+                    )
+                  }
+                }
+                clinicalFocusListTitle
+                clinicalFocusText
+              }
+              surgicalApproachTitle
+              surgicalApproachSubtitle
+              surgicalApproachLeftContent
+              listMiddleText
+              surgicalApproachList {
+                count
+                listTitle
+              }
+              internationalTrainingTitle
+              internationalTrainingSubtitle
+              internationalTrainingLeftText
+              internationalTrainingImage {
+                node {
+                  altText
+                  gatsbyImage(
+                    layout: CONSTRAINED
+                    height: 536
+                    width: 536
+                    placeholder: BLURRED
+                  )
+                }
+              }
+              internationalTrainingRightText
+              bottomTitle
+              slider {
+                sliderText
               }
             }
           }
-          clinicalFocusAreasTitle
-          clinicalFocusAreasSubtitle
-          clinicalFocusAreasDescription
-          clinicalFocusList {
-            clinicalFocusListImage {
+        }
+      }
+
+      allWpPost(limit: 3, sort: { date: DESC }) {
+        edges {
+          node {
+            id
+            title
+            uri
+            slug
+            excerpt
+            featuredImage {
               node {
                 altText
-                gatsbyImage(layout: CONSTRAINED, height: 10, width: 10, placeholder: BLURRED)
+                gatsbyImage(
+                  layout: CONSTRAINED
+                  width: 520
+                  height: 360
+                  placeholder: BLURRED
+                )
               }
             }
-            clinicalFocusListTitle
-            clinicalFocusText
-          }
-          surgicalApproachTitle
-          surgicalApproachSubtitle
-          surgicalApproachLeftContent
-          listMiddleText
-          surgicalApproachList {
-            count
-            listTitle
-          }
-          internationalTrainingTitle
-          internationalTrainingSubtitle
-          internationalTrainingLeftText
-          internationalTrainingImage {
-            node {
-              altText
-             gatsbyImage(layout: CONSTRAINED, height: 536, width: 536, placeholder: BLURRED)
-            }
-          }
-          internationalTrainingRightText
-          bottomTitle
-          slider {
-            sliderText
           }
         }
       }
     }
-  }
-  allWpPost(limit: 3, sort: { date: DESC }) {
-  edges {
-    node {
-      id
-      title
-      uri
-      slug
-      excerpt
-      featuredImage {
-        node {
-          altText
-          gatsbyImage(
-            layout: CONSTRAINED
-            width: 520
-            height: 360
-            placeholder: BLURRED
-          )
-        }
-      }
-    }
-  }
-}
-}
-  `);
+  `)
 
-  // Get data for the Home Hero Section
-  const heroImageSrcSet = data.allWpPage.edges[0].node.home.heartImage.node.gatsbyImage.images.sources[0].srcSet;
-  const heroAltText = data.allWpPage.edges[0].node.home.heartImage.node.altText;
+  const heroImageSrcSet =
+    data.allWpPage.edges[0].node.home.heartImage.node.gatsbyImage.images
+      .sources[0].srcSet
 
-  // Get data for the About Section
-  const globallyInspiredSvg = data.allWpPage.edges[0].node.home.globallyInspiredSvg.node.mediaItemUrl;
-  const globallyInspiredAltText = data.allWpPage.edges[0].node.home.globallyInspiredSvg.node.altText;
-  const aboutContent = data.allWpPage.edges[0].node.home.content;
-  const aboutLinkTitle = data.allWpPage.edges[0].node.home.link.linkTitle;
-  const aboutLinkUrl = data.allWpPage.edges[0].node.home.link.linkUrl;
+  const heroAltText =
+    data.allWpPage.edges[0].node.home.heartImage.node.altText
 
-  const practiceTitle = data.allWpPage.edges[0].node.home.title;
-  const practiceSubtitle = data.allWpPage.edges[0].node.home.subtitle;
-  const rightText = data.allWpPage.edges[0].node.home.rightText;
+  const globallyInspiredSvg =
+    data.allWpPage.edges[0].node.home.globallyInspiredSvg.node.mediaItemUrl
 
-  // Get the leftImage data
-  const leftImageData = data.allWpPage.edges[0].node.home.leftImage.node.gatsbyImage;
-  const leftImageAlt = data.allWpPage.edges[0].node.home.leftImage.node.altText;
+  const globallyInspiredAltText =
+    data.allWpPage.edges[0].node.home.globallyInspiredSvg.node.altText
 
-  const matrixList = data.allWpPage.edges[0].node.home.matrixList;
+  const aboutContent = data.allWpPage.edges[0].node.home.content
 
-  // Get surgical approach data from the query
-  const surgicalApproachTitle = data.allWpPage.edges[0].node.home.surgicalApproachTitle;
-  const surgicalApproachSubtitle = data.allWpPage.edges[0].node.home.surgicalApproachSubtitle;
-  const surgicalApproachLeftContent = data.allWpPage.edges[0].node.home.surgicalApproachLeftContent;
-  const listMiddleText = data.allWpPage.edges[0].node.home.listMiddleText;
-  const surgicalApproachList = data.allWpPage.edges[0].node.home.surgicalApproachList;
+  const practiceTitle = data.allWpPage.edges[0].node.home.title
+  const practiceSubtitle = data.allWpPage.edges[0].node.home.subtitle
+  const rightText = data.allWpPage.edges[0].node.home.rightText
 
-  // Get data for the International Training Section
-  const internationalTrainingTitle = data.allWpPage.edges[0].node.home.internationalTrainingTitle;
-  const internationalTrainingSubtitle = data.allWpPage.edges[0].node.home.internationalTrainingSubtitle;
-  const internationalTrainingLeftText = data.allWpPage.edges[0].node.home.internationalTrainingLeftText;
-  const internationalTrainingImageData = data.allWpPage.edges[0].node.home.internationalTrainingImage.node.gatsbyImage;
-  const internationalTrainingImageAlt = data.allWpPage.edges[0].node.home.internationalTrainingImage.node.altText;
-  const internationalTrainingRightText = data.allWpPage.edges[0].node.home.internationalTrainingRightText;
-  const bottomTitle = data.allWpPage.edges[0].node.home.bottomTitle;
-  const sliderText = data.allWpPage.edges[0].node.home.slider.map(item => item.sliderText);
+  const matrixList = data.allWpPage.edges[0].node.home.matrixList || []
 
-  const posts = data.allWpPost.edges;
+  const surgicalApproachTitle =
+    data.allWpPage.edges[0].node.home.surgicalApproachTitle
+
+  const surgicalApproachSubtitle =
+    data.allWpPage.edges[0].node.home.surgicalApproachSubtitle
+
+  const surgicalApproachLeftContent =
+    data.allWpPage.edges[0].node.home.surgicalApproachLeftContent
+
+  const listMiddleText = data.allWpPage.edges[0].node.home.listMiddleText
+
+  const surgicalApproachList =
+    data.allWpPage.edges[0].node.home.surgicalApproachList || []
+
+  const posts = data.allWpPost.edges
+
+  const productSwiperRef = useRef(null)
+  const productAutoplayTimerRef = useRef(null)
+  const [activeProductIndex, setActiveProductIndex] = useState(0)
 
   useEffect(() => {
-    const cleanupAnimations = initHomeAnimations();
+    const stopManualAutoplay = () => {
+      if (productAutoplayTimerRef.current) {
+        clearInterval(productAutoplayTimerRef.current)
+        productAutoplayTimerRef.current = null
+      }
+    }
+
+    const startManualAutoplay = () => {
+      stopManualAutoplay()
+
+      productAutoplayTimerRef.current = setInterval(() => {
+        const swiper = productSwiperRef.current
+
+        if (!swiper || swiper.destroyed) return
+        if (typeof document !== "undefined" && document.hidden) return
+
+        swiper.slideNext(900)
+      }, 2600)
+    }
+
+    const refreshSwiper = () => {
+      const swiper = productSwiperRef.current
+
+      if (!swiper || swiper.destroyed) return
+
+      swiper.update()
+      startManualAutoplay()
+    }
+
+    const timer = setTimeout(refreshSwiper, 900)
+
+    window.addEventListener("resize", refreshSwiper)
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopManualAutoplay()
+      } else {
+        refreshSwiper()
+      }
+    })
 
     return () => {
-      cleanupAnimations();
-    };
-  }, []);
+      clearTimeout(timer)
+      stopManualAutoplay()
+      window.removeEventListener("resize", refreshSwiper)
+    }
+  }, [matrixList.length])
 
+  useEffect(() => {
+    const cleanupAnimations = initHomeAnimations()
 
+    return () => {
+      cleanupAnimations()
+    }
+  }, [])
 
   return (
     <Layout>
       <section className="home-hero-sec">
         <div className="container">
           <div id="imgHeart" className="img-wrap">
-            <img
-              srcSet={heroImageSrcSet} // Use srcSet from the GraphQL query for responsive images
-              alt={heroAltText} // Using the alt text from the GraphQL query
-            />
+            <img srcSet={heroImageSrcSet} alt={heroAltText} />
           </div>
         </div>
       </section>
@@ -227,21 +284,15 @@ export default function IndexPage() {
       <section className="about-section">
         <div className="container">
           <div className="img-wrap">
-            <img
-              src={globallyInspiredSvg}
-              alt={globallyInspiredAltText}
-            />
+            <img src={globallyInspiredSvg} alt={globallyInspiredAltText} />
 
             <div className="para">
               <p dangerouslySetInnerHTML={{ __html: aboutContent }} />
             </div>
+
             <div className="btn-wrapper">
               {data.allWpPage.edges[0].node.home.link.map((link, index) => (
-                <a
-                  key={index}
-                  className={index === 0 ? "red" : "red"} // Apply 'red' class only to the first link
-                  href={link.linkUrl}
-                >
+                <a key={index} className="red" href={link.linkUrl}>
                   {link.linkTitle}
                   <svg
                     width="26"
@@ -273,94 +324,160 @@ export default function IndexPage() {
       {/* Practice Philosophy Section */}
       <section className="practice-section">
         <div className="title-wrapper">
-          <h2>{practiceTitle}
+          <h2>
+            {practiceTitle}
             <span>{practiceSubtitle}</span>
           </h2>
         </div>
+
         <div className="paragraph-wrapper">
           <div className="left">
-
             <img
               src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/02/practice-left-image-heart.png"
               alt="Fallback Image"
-
             />
           </div>
+
           <div className="right">
             <p>{rightText}</p>
           </div>
         </div>
       </section>
 
+      {/* Product List Section */}
+      <section className="product-list">
+        <div className="container">
+          {/* Desktop Version */}
+          <ul className="product-list-desktop">
+            {matrixList.map((item, index) => (
+              <li key={index}>
+                <p>{item.matrixTitle}</p>
 
-    {/* Product List Section */}
-<section className="product-list">
-  <div className="container">
+                <div className="img-wrap">
+                  <GatsbyImage
+                    image={item.matrixImage.node.gatsbyImage}
+                    alt={item.matrixImage.node.altText || item.matrixTitle}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
 
-    {/* Desktop Version */}
-    <ul className="product-list-desktop">
-      {matrixList.map((item, index) => (
-        <li key={index}>
-          <p>{item.matrixTitle}</p>
+          {/* iPad and Mobile Slider Version */}
+          <div className="product-list-mobile">
+            <Swiper
+              key={matrixList.length}
+              spaceBetween={18}
+              slidesPerView={1.15}
+              centeredSlides={true}
+              loop={matrixList.length > 2}
+              speed={900}
+              grabCursor={true}
+              observer={true}
+              observeParents={true}
+              resizeObserver={true}
+              onSwiper={swiper => {
+                productSwiperRef.current = swiper
 
-          <div className="img-wrap">
-            <GatsbyImage
-              image={item.matrixImage.node.gatsbyImage}
-              alt={item.matrixImage.node.altText || item.matrixTitle}
-            />
-          </div>
-        </li>
-      ))}
-    </ul>
+                setTimeout(() => {
+                  if (!swiper || swiper.destroyed) return
 
-    {/* iPad and Mobile Slider Version */}
-    <div className="product-list-mobile">
-      <Swiper
-        spaceBetween={18}
-        slidesPerView={1.15}
-        centeredSlides={true}
-        pagination={{ clickable: true }}
-        breakpoints={{
-          480: {
-            slidesPerView: 1.25,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1.55,
-            spaceBetween: 24,
-          },
-          900: {
-            slidesPerView: 2,
-            spaceBetween: 26,
-          },
-        }}
-        className="product-swiper"
-      >
-        {matrixList.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="product-slide-card">
-              <div className="product-slide-img">
-                <GatsbyImage
-                  image={item.matrixImage.node.gatsbyImage}
-                  alt={item.matrixImage.node.altText || item.matrixTitle}
+                  swiper.update()
+
+                  if (swiper.slideToLoop) {
+                    swiper.slideToLoop(0, 0)
+                  } else {
+                    swiper.slideTo(0, 0)
+                  }
+
+                  setActiveProductIndex(0)
+                }, 500)
+              }}
+              onSlideChange={swiper => {
+                setActiveProductIndex(swiper.realIndex || 0)
+              }}
+              onTouchStart={() => {
+                if (productAutoplayTimerRef.current) {
+                  clearInterval(productAutoplayTimerRef.current)
+                  productAutoplayTimerRef.current = null
+                }
+              }}
+              onTouchEnd={() => {
+                productAutoplayTimerRef.current = setInterval(() => {
+                  const swiper = productSwiperRef.current
+
+                  if (!swiper || swiper.destroyed) return
+                  if (typeof document !== "undefined" && document.hidden) return
+
+                  swiper.slideNext(900)
+                }, 2600)
+              }}
+              breakpoints={{
+                480: {
+                  slidesPerView: 1.25,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 1.55,
+                  spaceBetween: 24,
+                },
+                900: {
+                  slidesPerView: 2,
+                  spaceBetween: 26,
+                },
+              }}
+              className="product-swiper"
+            >
+              {matrixList.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="product-slide-card">
+                    <div className="product-slide-img">
+                      <GatsbyImage
+                        image={item.matrixImage.node.gatsbyImage}
+                        alt={item.matrixImage.node.altText || item.matrixTitle}
+                      />
+                    </div>
+
+                    <p>{item.matrixTitle}</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="product-custom-pagination">
+              {matrixList.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className={`product-pagination-bullet ${activeProductIndex === index ? "is-active" : ""
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                  onClick={() => {
+                    const swiper = productSwiperRef.current
+
+                    if (!swiper || swiper.destroyed) return
+
+                    if (swiper.slideToLoop) {
+                      swiper.slideToLoop(index, 700)
+                    } else {
+                      swiper.slideTo(index, 700)
+                    }
+
+                    setActiveProductIndex(index)
+                  }}
                 />
-              </div>
-
-              <p>{item.matrixTitle}</p>
+              ))}
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
       <ClinicalProcess />
 
       {/* Surgical Approach Section */}
       <div className="title-wrapper">
-        <h2>{surgicalApproachTitle}
+        <h2>
+          {surgicalApproachTitle}
           <span>{surgicalApproachSubtitle}</span>
         </h2>
       </div>
@@ -376,6 +493,7 @@ export default function IndexPage() {
               <div className="middle-text">
                 <p dangerouslySetInnerHTML={{ __html: listMiddleText }} />
               </div>
+
               <ul className="surgery-section">
                 {surgicalApproachList.map((item, index) => (
                   <li key={index}>
@@ -392,67 +510,17 @@ export default function IndexPage() {
         </div>
       </section>
 
-      {/* <section className="international-training">
-        <div className="container">
-          <div className="title-wrapper">
-            <h2>{internationalTrainingTitle}
-              <span>{internationalTrainingSubtitle}</span>
-            </h2>
-          </div>
-
-          <div className="international-sec">
-            <div className="left">
-              <p>{internationalTrainingLeftText}</p>
-               
-                <div className="international-bottom">
-            <p>{bottomTitle}</p>
-           
-            <div className="internation-bottom-swiper">
-              <Swiper
-                spaceBetween={30}  
-                slidesPerView={1}  
-                loop={true}  
-                direction={'vertical'}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                pagination={{ clickable: true }} 
-                className="swiper-wrapper"
-              >
-               
-                {sliderText.map((text, index) => (
-                  <SwiperSlide key={index}>
-                    <p>{text}</p>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          </div>
-            </div>
-            <div className="middle">
-              
-              <GatsbyImage
-                image={internationalTrainingImageData} 
-                alt={internationalTrainingImageAlt}
-
-              />
-            </div>
-           
-          </div>
-
-         
-        </div>
-      </section> */}
-
       <section className="blog-section">
         <div className="container">
           <div className="title-wrapper">
-            <h2>Blogs
-              <span>From operating rooms in Mumbai to training labs in Europe</span>
+            <h2>
+              Blogs
+              <span>
+                From operating rooms in Mumbai to training labs in Europe
+              </span>
             </h2>
           </div>
 
-        
-
-          {/* Default grid layout for larger screens */}
           <div className="blog-cards-container desktop-blog">
             {posts.map(({ node }) => {
               const image = node.featuredImage?.node?.gatsbyImage
@@ -473,28 +541,25 @@ export default function IndexPage() {
                   </div>
 
                   <div className="blog-wrapper">
-                    {/* <div className="blog-card-header"> */}
-                      {/* <span className="blog-category">Heart</span>
-            <span className="blog-category">Wellness</span> */}
-                    {/* </div> */}
-
-               
-                     <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
+                    <h3 dangerouslySetInnerHTML={{ __html: node.title }} />
 
                     <p className="blog-card-description">{excerptText}</p>
 
-                   <Link to={`/insights/${node.slug}/`} className="read-more-btn">
-                    Read More
-                  </Link>
+                    <Link
+                      to={`/insights/${node.slug}/`}
+                      className="read-more-btn"
+                    >
+                      Read More
+                    </Link>
                   </div>
                 </div>
               )
             })}
           </div>
 
-          {/* "Read All" Button */}
           <div className="btn-wrapper">
-            <a href="#" className="read-all-btn">Read All
+            <a href="#" className="read-all-btn">
+              Read All
               <svg
                 width="26"
                 height="20"
@@ -520,17 +585,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-
       <FAQ limit={4} />
-
-
-
-
     </Layout>
-
-
-
-
-
   )
 }

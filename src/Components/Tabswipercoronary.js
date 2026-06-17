@@ -218,7 +218,7 @@ const TabSwiperCoronary = () => {
   if (!tabsData.length) return null
 
   return (
-    <section className="tab-swper-coronary">
+    <section className="tab-swper-coronary" data-aos="fade-up">
       <div className="container">
         <div className="tab-swiper-wrapper">
           <div className="swiper" id="tabSwiper">

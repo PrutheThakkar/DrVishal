@@ -179,12 +179,12 @@
 }
 @media (max-width:900px) {
   .about-section .container .img-wrap img {
-    width: 400px;
+    width: 100%;
   }
 }
 @media (max-width:400px) {
   .about-section .container .img-wrap img {
-    width: 350px;
+   width: 100%;
     margin-bottom: 20px;
   }
 }
@@ -486,6 +486,23 @@
 /* Desktop version visible by default */
 .product-list-desktop {
   display: flex;
+}
+
+.product-list-mobile .product-custom-pagination{
+  display: flex;
+  justify-content: center;
+}
+
+.product-list-mobile .product-custom-pagination .product-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  background: rgba(253, 250, 243, 0.4);
+  border: none;
+  border-radius: 50px;
+}
+.product-list-mobile .product-custom-pagination .product-pagination-bullet.is-active {
+ background: #fff;
 }
 
 /* iPad and Mobile Fix */
@@ -878,6 +895,9 @@
     position: relative;
     width: 100%;
     text-align: center;
+    left: 0;
+    transform: translate(0);
+    margin-top: 20px;
   }
 }
 .sergical-swiper .right .middle-text p {

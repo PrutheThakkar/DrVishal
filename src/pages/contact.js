@@ -60,7 +60,7 @@ const RequestAppointmentPage = ({ data }) => {
         <InsideBanner
           title={insidePage?.pageTitle} />
         {/* Intro Section */}
-        <section className="Dr-vishal-pingale">
+        <section className="Dr-vishal-pingale" data-aos="fade-up">
           <div className="container">
             <div className="title-wrapper">
               <h2>
@@ -82,7 +82,7 @@ const RequestAppointmentPage = ({ data }) => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="contact-section">
+        <section className="contact-section" data-aos="fade-up">
           <div className="container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="input-wrap">
@@ -184,7 +184,7 @@ const RequestAppointmentPage = ({ data }) => {
         </section>
 
         {/* Hospitals & Clinical Access */}
-        <section className="hospital-clinic-access">
+        <section className="hospital-clinic-access" data-aos="fade-up">
           <div className="container">
             <div className="title-wrapper">
               <h2>
@@ -210,7 +210,7 @@ const RequestAppointmentPage = ({ data }) => {
               </p>
             </div>
 
-            <div className="wrapper">
+            <div className="wrapper" data-aos="fade-up">
               <div className="left">
                 <div className="img-wrapp">
                   <img src={vishalMap} alt="map" />
@@ -219,57 +219,108 @@ const RequestAppointmentPage = ({ data }) => {
 
               <div className="right">
                 <ul>
-                  <li>
-                   
-                      <div className="img-wrapper">
-                        <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/wockhardt-hospitl-contact.webp" alt="" />
-                      </div>
-                   
-                      <h3>Wockhardt Hospital</h3>
-                      {/* <p className="info">
-                        <span>Visits Only by appointments</span>
-                        <a href="#">Call on 09702080365</a>
-                      </p> */}
-                   
+                  <li
+                    data-aos="fade-up"
+                    data-aos-duration="850"
+                    data-aos-delay="100"
+                  >
+                    <div
+                      className="img-wrapper"
+                      data-aos="clip-reveal"
+                      data-aos-duration="1000"
+                      data-aos-delay="150"
+                    >
+                      <img
+                        src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/wockhardt-hospitl-contact.webp"
+                        alt="Wockhardt Hospital"
+                      />
+                    </div>
+
+                    <h3
+                      data-aos="fade-up"
+                      data-aos-duration="750"
+                      data-aos-delay="250"
+                    >
+                      Wockhardt Hospital
+                    </h3>
                   </li>
 
-                  <li>
-                   
-                      <div className="img-wrapper">
-                        <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/saifee-hospital-contact.webp" alt="" />
-                      </div>
-                  
-                      <h3>Saifee Hospital</h3>
-                      {/* <p className="info">Saturday : 7 pm to 9 pm</p> */}
-                   
+                  <li
+                    data-aos="fade-up"
+                    data-aos-duration="850"
+                    data-aos-delay="250"
+                  >
+                    <div
+                      className="img-wrapper"
+                      data-aos="clip-reveal"
+                      data-aos-duration="1000"
+                      data-aos-delay="300"
+                    >
+                      <img
+                        src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/saifee-hospital-contact.webp"
+                        alt="Saifee Hospital"
+                      />
+                    </div>
+
+                    <h3
+                      data-aos="fade-up"
+                      data-aos-duration="750"
+                      data-aos-delay="400"
+                    >
+                      Saifee Hospital
+                    </h3>
                   </li>
 
-                  <li>
-                  
-                      <div className="img-wrapper">
-                        <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/breach-condy-hospital-contact.webp" alt="" />
-                      </div>
-                  
-                      <h3>Breach Candy Hospital Trust</h3>
-                      {/* <p className="info">
-                        <span>Clinic visits Only by appointments</span>
-                        <a href="#">Call on 09702080365</a>
-                      </p> */}
-                   
+                  <li
+                    data-aos="fade-up"
+                    data-aos-duration="850"
+                    data-aos-delay="400"
+                  >
+                    <div
+                      className="img-wrapper"
+                      data-aos="clip-reveal"
+                      data-aos-duration="1000"
+                      data-aos-delay="450"
+                    >
+                      <img
+                        src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/breach-condy-hospital-contact.webp"
+                        alt="Breach Candy Hospital Trust"
+                      />
+                    </div>
+
+                    <h3
+                      data-aos="fade-up"
+                      data-aos-duration="750"
+                      data-aos-delay="550"
+                    >
+                      Breach Candy Hospital Trust
+                    </h3>
                   </li>
 
-                  <li>
-                   
-                      <div className="img-wrapper">
-                        <img src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/global-hospitalp-contact.webp" alt="" />
-                      </div>
-                    
-                      <h3>Global Hospitals</h3>
-                      {/* <p className="info">
-                        <span>Clinic visits Only by appointments </span>
-                        <a href="#">Call on 09702080365</a>
-                      </p> */}
-                    
+                  <li
+                    data-aos="fade-up"
+                    data-aos-duration="850"
+                    data-aos-delay="550"
+                  >
+                    <div
+                      className="img-wrapper"
+                      data-aos="clip-reveal"
+                      data-aos-duration="1000"
+                      data-aos-delay="600"
+                    >
+                      <img
+                        src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/global-hospitalp-contact.webp"
+                        alt="Global Hospitals"
+                      />
+                    </div>
+
+                    <h3
+                      data-aos="fade-up"
+                      data-aos-duration="750"
+                      data-aos-delay="700"
+                    >
+                      Global Hospitals
+                    </h3>
                   </li>
                 </ul>
               </div>
@@ -278,7 +329,7 @@ const RequestAppointmentPage = ({ data }) => {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bottom-section">
+        <section className="bottom-section" data-aos="fade-up">
           <div className="container">
             <h3>Don’t see the answer you need?</h3>
             <p>Contact Dr. Vishal Pingle for more details</p>

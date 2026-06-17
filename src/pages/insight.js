@@ -37,7 +37,7 @@ const InsightsListingPage = ({ data }) => {
     <Layout>
       <InsideBanner title={insidePage?.pageTitle || page?.title} />
 
-      <section className="Dr-vishal-pingale">
+      <section className="Dr-vishal-pingale" data-aos="fade-up">
         <div className="container">
           <div className="title-wrapper">
             <h2>
@@ -50,7 +50,7 @@ const InsightsListingPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="clinical-focus-section">
+      <section className="clinical-focus-section" data-aos="fade-up">
         <div className="container">
           <ul>
             {posts.map(post => {
@@ -97,14 +97,14 @@ const InsightsListingPage = ({ data }) => {
         </div>
       </section>
 
-      <div className="inside-faq">
+      <div className="inside-faq" data-aos="fade-up">
         <FAQ limit={10} />
       </div>
 
       <section className="bottom-section faq">
         <div className="container">
           <h3>Don’t see the answer you need?</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Contact Dr. Vishal Pingle for more details</p>
           <a href="#" className="read-all-btn">
             Contact Now
           </a>
