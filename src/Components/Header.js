@@ -225,6 +225,7 @@ const Header = () => {
           transform: translateZ(0);
           will-change: padding;
           transition: padding 900ms cubic-bezier(0.22, 1, 0.36, 1);
+         
         }
 
         .site-header.is-scrolled {

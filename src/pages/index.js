@@ -473,10 +473,10 @@ export default function IndexPage() {
                   </div>
 
                   <div className="blog-wrapper">
-                    <div className="blog-card-header">
+                    {/* <div className="blog-card-header"> */}
                       {/* <span className="blog-category">Heart</span>
             <span className="blog-category">Wellness</span> */}
-                    </div>
+                    {/* </div> */}
 
                
                      <h3 dangerouslySetInnerHTML={{ __html: node.title }} />

@@ -17,9 +17,23 @@
   border-radius: 20px;
   overflow: hidden;
 }
+@media (max-width:767px) {
+  .Dr-vishal-pingale .container .img-wrap{
+    height: 300px !important;
+  }
+  .Dr-vishal-pingale .container .img-wrap.journey{
+    height: auto !important;
+  }
+}
 .Dr-vishal-pingale .container .img-wrap img {
   width: 100%;
   height: auto;
+}
+@media (max-width:767px) {
+  .Dr-vishal-pingale .container .img-wrap img {
+  width: 100%;
+  height: 100%;
+}
 }
 .Dr-vishal-pingale .img-wrap{
    margin-bottom: 50px;
@@ -27,6 +41,11 @@
 
 .infro-section {
   margin-bottom: 80px;
+}
+@media (max-width:767px) {
+  .infro-section {
+  margin-bottom: 0;
+}
 }
 .infro-section .container {
   display: flex;

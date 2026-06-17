@@ -143,7 +143,7 @@ const AboutPage = ({ data }) => {
             outcomes that meet international standards.
           </p>
 
-          <div className="img-wrap">
+          <div className="img-wrap journey">
             <StaticImage
               src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/map-new-img.png"
               alt="Map Image"
