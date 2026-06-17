@@ -2,6 +2,7 @@
   margin-top: 0 !important;
 }
 
+
 .home-hero-sec {
   height: 100vh;
   position: relative;
@@ -46,6 +47,7 @@
   height: auto;
   width: 55%;
   margin: 0 auto;
+  opacity: 0.3;
 }
 @media (max-width: 1920px) {
   .home-hero-sec .img-wrap {

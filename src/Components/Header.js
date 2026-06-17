@@ -6,27 +6,51 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false)
 
   // Preloader
-  React.useEffect(() => {
-    const handleLoad = () => {
-      const preloader = document.getElementById("preloader")
-      if (preloader) {
-        preloader.classList.add("hide")
-        setTimeout(() => {
-          preloader.style.display = "none"
-        }, 1200)
-      }
-    }
+// Preloader
+React.useEffect(() => {
+  const preloader = document.getElementById("preloader")
+  const bar = document.getElementById("preBar")
 
-    if (document.readyState === "complete") {
-      handleLoad()
-    } else {
-      window.addEventListener("load", handleLoad)
-    }
+  if (!preloader || !bar) return
 
-    return () => {
-      window.removeEventListener("load", handleLoad)
-    }
-  }, [])
+  let hideTimer
+  let fallbackTimer
+
+  requestAnimationFrame(() => {
+    bar.style.width = "100%"
+  })
+
+ const hidePreloader = () => {
+  if (!preloader || preloader.classList.contains("hide")) return
+
+  preloader.classList.add("hide")
+
+  setTimeout(() => {
+    preloader.style.display = "none"
+    document.body.classList.remove("preloader-active")
+
+    window.dispatchEvent(new Event("preloaderDone"))
+  }, 1200)
+}
+
+  document.body.classList.add("preloader-active")
+
+  if (document.readyState === "complete") {
+    hideTimer = setTimeout(hidePreloader, 2000)
+  } else {
+    window.addEventListener("load", () => {
+      hideTimer = setTimeout(hidePreloader, 500)
+    })
+
+    fallbackTimer = setTimeout(hidePreloader, 3500)
+  }
+
+  return () => {
+    clearTimeout(hideTimer)
+    clearTimeout(fallbackTimer)
+    window.removeEventListener("load", hidePreloader)
+  }
+}, [])
 
   // Smooth shrink header on scroll
   React.useEffect(() => {
@@ -96,13 +120,13 @@ const Header = () => {
       {/* ═══════════════════════════════════════════
            PRELOADER
       ═══════════════════════════════════════════ */}
-      {/* <div id="preloader">
+      <div id="preloader">
         <p className="pre-tagline">Welcome to</p>
-        <h1 className="pre-title">Revive Heart Institute</h1>
+        <h1 className="pre-title">Dr. Vishal Pingle's website</h1>
         <div className="pre-bar-wrap">
           <div className="pre-bar" id="preBar"></div>
         </div>
-      </div> */}
+      </div>
 
       <header
         className={`site-header ${isScrolled ? "is-scrolled" : ""}`}

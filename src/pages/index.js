@@ -266,13 +266,33 @@ export default function IndexPage() {
   }, [matrixList.length])
 
   useEffect(() => {
-    const cleanupAnimations = initHomeAnimations()
+  let cleanupAnimations
 
-    return () => {
+  const startAnimations = () => {
+    cleanupAnimations = initHomeAnimations()
+
+    if (typeof window !== "undefined" && window.AOS) {
+      window.AOS.refreshHard()
+    }
+  }
+
+  if (
+    typeof document !== "undefined" &&
+    !document.body.classList.contains("preloader-active")
+  ) {
+    startAnimations()
+  } else {
+    window.addEventListener("preloaderDone", startAnimations, { once: true })
+  }
+
+  return () => {
+    window.removeEventListener("preloaderDone", startAnimations)
+
+    if (cleanupAnimations) {
       cleanupAnimations()
     }
-  }, [])
-
+  }
+}, [])
 
   return (
     <Layout>
