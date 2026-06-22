@@ -60,19 +60,19 @@ const RequestAppointmentPage = ({ data }) => {
         <InsideBanner
           title={insidePage?.pageTitle} />
         {/* Intro Section */}
-       <section className="Dr-vishal-pingale" data-aos="fade-up">
-        <div className="container">
-          <div className="title-wrapper">
-            <h2>
-              {insidePage.insidePageTopTitle}
-              <span>
-                {insidePage.insidePageTopSubtitle}
-              </span>
-            </h2>
+        <section className="Dr-vishal-pingale" data-aos="fade-up">
+          <div className="container">
+            <div className="title-wrapper">
+              <h2>
+                {insidePage.insidePageTopTitle}
+                <span>
+                  {insidePage.insidePageTopSubtitle}
+                </span>
+              </h2>
+            </div>
+            <span dangerouslySetInnerHTML={{ __html: insidePage.insidePageTopParagraph }} />
           </div>
-          <span dangerouslySetInnerHTML={{ __html: insidePage.insidePageTopParagraph }} />
-        </div>
-      </section>
+        </section>
 
         {/* Contact Form Section */}
         <section className="contact-section" data-aos="fade-up">
@@ -214,14 +214,11 @@ const RequestAppointmentPage = ({ data }) => {
                 <ul>
                   <li
                     data-aos="fade-up"
-                    data-aos-duration="850"
-                    data-aos-delay="100"
+
                   >
                     <div
                       className="img-wrapper"
-                      data-aos="clip-reveal"
-                      data-aos-duration="1000"
-                      data-aos-delay="150"
+
                     >
                       <img
                         src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/wockhardt-hospitl-contact.webp"
@@ -231,8 +228,7 @@ const RequestAppointmentPage = ({ data }) => {
 
                     <h3
                       data-aos="fade-up"
-                      data-aos-duration="750"
-                      data-aos-delay="250"
+
                     >
                       Wockhardt Hospital
                     </h3>
@@ -240,14 +236,11 @@ const RequestAppointmentPage = ({ data }) => {
 
                   <li
                     data-aos="fade-up"
-                    data-aos-duration="850"
-                    data-aos-delay="250"
+
                   >
                     <div
                       className="img-wrapper"
-                      data-aos="clip-reveal"
-                      data-aos-duration="1000"
-                      data-aos-delay="300"
+
                     >
                       <img
                         src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/saifee-hospital-contact.webp"
@@ -256,9 +249,7 @@ const RequestAppointmentPage = ({ data }) => {
                     </div>
 
                     <h3
-                      data-aos="fade-up"
-                      data-aos-duration="750"
-                      data-aos-delay="400"
+
                     >
                       Saifee Hospital
                     </h3>
@@ -266,14 +257,11 @@ const RequestAppointmentPage = ({ data }) => {
 
                   <li
                     data-aos="fade-up"
-                    data-aos-duration="850"
-                    data-aos-delay="400"
+
                   >
                     <div
                       className="img-wrapper"
-                      data-aos="clip-reveal"
-                      data-aos-duration="1000"
-                      data-aos-delay="450"
+
                     >
                       <img
                         src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/breach-condy-hospital-contact.webp"
@@ -283,8 +271,7 @@ const RequestAppointmentPage = ({ data }) => {
 
                     <h3
                       data-aos="fade-up"
-                      data-aos-duration="750"
-                      data-aos-delay="550"
+
                     >
                       Breach Candy Hospital Trust
                     </h3>
@@ -292,14 +279,11 @@ const RequestAppointmentPage = ({ data }) => {
 
                   <li
                     data-aos="fade-up"
-                    data-aos-duration="850"
-                    data-aos-delay="550"
+
                   >
                     <div
                       className="img-wrapper"
-                      data-aos="clip-reveal"
-                      data-aos-duration="1000"
-                      data-aos-delay="600"
+
                     >
                       <img
                         src="https://wpvishal.studiosentientdemo.com/wp-content/uploads/2026/05/global-hospitalp-contact.webp"
@@ -309,8 +293,7 @@ const RequestAppointmentPage = ({ data }) => {
 
                     <h3
                       data-aos="fade-up"
-                      data-aos-duration="750"
-                      data-aos-delay="700"
+
                     >
                       Global Hospitals
                     </h3>

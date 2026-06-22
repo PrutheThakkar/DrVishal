@@ -59,6 +59,7 @@ const InsightsListingPage = ({ data }) => {
               return (
                 <li key={post.id}>
                   <Link to={`/insights/${post.slug}/`}>
+                  <div className="img-wrap">
                     <img
                       src={
                         post.featuredImage?.node?.mediaItemUrl ||
@@ -66,6 +67,7 @@ const InsightsListingPage = ({ data }) => {
                       }
                       alt={post.featuredImage?.node?.altText || post.title}
                     />
+                  </div>
 
                     <div className="text-wrap">
                       <div className="wrapper">

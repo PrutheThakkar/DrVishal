@@ -970,3 +970,132 @@ img{
 p:last-child{
   margin-bottom: 0;
 }
+
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #991b1b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 3vw, 42px);
+}
+
+.revive-preloader-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1vw, 16px);
+  transform: translateY(10px);
+  animation: logoFadeIn 0.8s ease forwards;
+}
+
+.revive-heart-svg {
+  width: clamp(90px, 9vw, 150px);
+  height: auto;
+  overflow: visible;
+}
+
+.revive-heart-path {
+  stroke: #fff;
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: heartLineDraw 2.2s ease-in-out infinite;
+}
+
+.revive-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: -18px;
+}
+
+.revive-logo-text h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(28px, 3vw, 54px);
+  font-weight: 400;
+  letter-spacing: clamp(10px, 1.2vw, 22px);
+  line-height: 1;
+}
+
+.revive-logo-text p {
+  margin: clamp(10px, 0.8vw, 16px) 0 0;
+  color: #1e2230;
+  font-size: clamp(8px, 0.8vw, 14px);
+  font-weight: 500;
+  letter-spacing: clamp(4px, 0.5vw, 9px);
+  line-height: 1;
+}
+
+.pre-bar-wrap {
+  width: clamp(130px, 14vw, 220px);
+  height: 2px;
+  background: rgba(209, 17, 28, 0.2);
+  overflow: hidden;
+}
+
+.pre-bar {
+  width: 0%;
+  height: 100%;
+  background: #fff;
+}
+
+@keyframes heartLineDraw {
+  0% {
+    stroke-dashoffset: 420;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  60% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -420;
+    opacity: 0;
+  }
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 575px) {
+  .revive-preloader-logo {
+    gap: 4px;
+    transform: scale(0.9);
+  }
+
+  .revive-logo-text {
+    margin-left: -14px;
+  }
+
+  .revive-logo-text h2 {
+    letter-spacing: 8px;
+  }
+
+  .revive-logo-text p {
+    letter-spacing: 3px;
+  }
+}

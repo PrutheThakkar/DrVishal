@@ -299,13 +299,32 @@ export default function IndexPage() {
       {/* ═══════════════════════════════════════════
                PRELOADER
           ═══════════════════════════════════════════ */}
-          <div id="preloader">
-            <p className="pre-tagline">Welcome</p>
-            {/* <h1 className="pre-title">Dr. Vishal Pingle's website</h1> */}
-            <div className="pre-bar-wrap">
-              <div className="pre-bar" id="preBar"></div>
-            </div>
-          </div>
+    <div id="preloader">
+  <div className="revive-preloader-logo">
+    <svg
+      className="revive-heart-svg"
+      viewBox="0 0 190 170"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        className="revive-heart-path"
+        d="M146 28C106 0 49 14 31 58C7 118 73 142 101 158C106 161 112 161 117 158C134 148 153 136 169 122"
+      />
+    </svg>
+
+    <div className="revive-logo-text">
+      <h2>Welcome</h2>
+     
+    </div>
+  </div>
+
+  <div className="pre-bar-wrap">
+    <div className="pre-bar" id="preBar"></div>
+  </div>
+</div>
+
+
     <Layout>
       <section className="home-hero-sec" >
         <div className="container">
