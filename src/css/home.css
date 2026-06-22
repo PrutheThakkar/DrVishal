@@ -922,6 +922,7 @@
     left: 0;
     transform: translate(0);
     margin-top: 20px;
+    display: none;
   }
 }
 .sergical-swiper .right .middle-text p {
@@ -1422,7 +1423,7 @@ height: auto;
 .faq-section .faq-container .faq-left {
   width: 30%;
 }
-@media (max-width:1440px) {
+@media (max-width:1500px) {
   .faq-section .faq-container .faq-left a{
     margin-bottom: 10px;
   }

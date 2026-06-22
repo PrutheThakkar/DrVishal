@@ -151,7 +151,7 @@ const scrollToFaqSection = useCallback(() => {
             </div>
           </div>
 
-          <div className="faq-right" data-aos="fade-up">
+          <div className="faq-right" >
             <div className="faq-items">
               {faqData.map((faq, index) => (
                 <div

@@ -70,7 +70,7 @@ const AboutPage = ({ data }) => {
             <h2 data-aos="fade-up">
               {insidePage.insidePageTopTitle}
               <span>
-                {insidePage.insidePageTopTitle}
+                {insidePage.insidePageTopSubtitle}
               </span>
             </h2>
           </div>

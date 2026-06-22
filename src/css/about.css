@@ -149,10 +149,12 @@ ul.list-od-degree{
   width: 95%;
   margin: 0 auto;
   margin-bottom: 60px;
+  margin-top: 60px;
 }
 @media (max-width:767px) {
   ul.list-od-degree{
     margin-bottom: 20px;
+    margin-top: 20px;
   }
 }
 @media (max-width:1000px) {

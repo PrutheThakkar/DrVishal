@@ -300,8 +300,8 @@ export default function IndexPage() {
                PRELOADER
           ═══════════════════════════════════════════ */}
           <div id="preloader">
-            <p className="pre-tagline">Welcome to</p>
-            <h1 className="pre-title">Dr. Vishal Pingle's website</h1>
+            <p className="pre-tagline">Welcome</p>
+            {/* <h1 className="pre-title">Dr. Vishal Pingle's website</h1> */}
             <div className="pre-bar-wrap">
               <div className="pre-bar" id="preBar"></div>
             </div>
