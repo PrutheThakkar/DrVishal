@@ -229,3 +229,11 @@ fill: #fff;
     font-size: clamp(1.2rem, 0.125rem + 0.9375vw, 1.25rem);
   }
 }/*# sourceMappingURL=faq.css.map */
+
+
+.home-faq-section .faq-item {
+border-bottom: 1px solid #C1272D !important;
+}
+.home-faq-section .faq-icon svg{
+fill: #C1272D !important;
+}

@@ -24,7 +24,7 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const FAQ = ({ limit }) => {
+const FAQ = ({ limit, className = "" }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -112,7 +112,7 @@ const scrollToFaqSection = useCallback(() => {
   }
 
   return (
-    <section id="inside-faq" className="faq-section" data-aos="fade-up">
+    <section id="inside-faq" className={`faq-section ${className}`} data-aos="fade-up">
       <div className="container">
         <div className="div-title">
           <h2>

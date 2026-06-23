@@ -1022,7 +1022,7 @@ p:last-child{
   color: #fff;
   font-size: clamp(28px, 3vw, 54px);
   font-weight: 400;
-  letter-spacing: clamp(10px, 1.2vw, 22px);
+  /* letter-spacing: clamp(10px, 1.2vw, 22px); */
   line-height: 1;
 }
 
@@ -1033,6 +1033,7 @@ p:last-child{
   font-weight: 500;
   letter-spacing: clamp(4px, 0.5vw, 9px);
   line-height: 1;
+  font-family: "Quicksand-Regular";
 }
 
 .pre-bar-wrap {
@@ -1097,5 +1098,40 @@ p:last-child{
 
   .revive-logo-text p {
     letter-spacing: 3px;
+  }
+}
+
+.revive-heart-svg {
+  width: 110px;
+  height: auto;
+  overflow: visible;
+}
+
+.revive-heart-path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.revive-heart-main {
+  stroke: #ffffff;
+  stroke-width: 9;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  animation: reviveHeartDraw 1.8s ease forwards;
+}
+
+.revive-heart-tail {
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 2.2;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: reviveHeartDraw 0.8s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes reviveHeartDraw {
+  to {
+    stroke-dashoffset: 0;
   }
 }

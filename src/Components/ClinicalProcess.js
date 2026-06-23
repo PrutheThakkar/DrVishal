@@ -34,7 +34,7 @@ const clinicalCards = [
   },
   {
     title: "Aortic & Coronary Surgery",
-    text: "Targeted approaches reducing recovery time while maintaining precision.",
+    text: "Treatment of complex aortic disease and coronary artery disease using tailored techniques",
     image: aorticImg,
     alt: "Aortic and Coronary Surgery",
   },
