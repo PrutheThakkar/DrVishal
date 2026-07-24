@@ -1,15 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../Components/Layout"
+import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 
 export default function ClinicalFocusDetail({ data }) {
   const item = data.wpClinicalFocus
 
   return (
     <Layout>
+       <InsideBanner title={item.title} />
+
       <section className="clinical-focus-detail">
         <div className="container">
-          <h1>{item.title}</h1>
 
           {item.featuredImage?.node?.mediaItemUrl && (
             <img

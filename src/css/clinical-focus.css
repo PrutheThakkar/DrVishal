@@ -300,3 +300,15 @@
   opacity: 0.3;
   pointer-events: none;
 }/*# sourceMappingURL=clinical-focus.css.map */
+
+.clinical-focus-detail{
+margin-bottom: 100px;
+}
+@media (max-width:767px) {
+  .clinical-focus-detail{
+  margin-bottom: 60px;
+  }
+}
+.clinical-focus-detail img{
+  margin-bottom: 50px;
+}
