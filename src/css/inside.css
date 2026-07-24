@@ -167,11 +167,11 @@ top: -25%;
   width: 100%;
   
 }
-@media (max-width:1366px) {
+/* @media (max-width:1366px) {
   .title-wrap{
     top: 23%;
   }
-}
+} */
 @media (max-width:767px) {
   .title-wrap{
     top: -20%;
@@ -184,11 +184,11 @@ top: 33%;
   left: 0;
   width: 100%;
 }
-@media (max-width:1366px) {
+/* @media (max-width:1366px) {
    .title-wrap{
     top: 23%;
   }
-}
+} */
 @media (max-width:767px) {
    .title-wrap{
     top: -10%;
