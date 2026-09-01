@@ -8,6 +8,8 @@ import { Link, graphql } from "gatsby"
 import TabSwiperCoronary from "../Components/Tabswipercoronary"
 import Layout from "../Components/Layout.js"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
+import Seo from "../Components/Seo.js"
+import { pageSeo } from "../data/seo.js"
 
 // ── Static data ──────────────────────────────────────────────────────────────
 
@@ -115,15 +117,7 @@ export default ClinicalFocusPage
 
 // ── Gatsby Head API SEO ─────────────────────────────────────────────────────
 
-export const Head = () => (
-  <>
-    <title>Clinical Focus | Revive Heart Institute</title>
-    <meta
-      name="description"
-      content="Explore Dr. Vishal Pingle's cardiac and thoracic surgical expertise at Revive Heart Institute, Mumbai."
-    />
-  </>
-)
+export const Head = () => <Seo {...pageSeo.clinicalFocus} />
 
 // ── GraphQL Page Query ───────────────────────────────────────────────────────
 // ✅ This query fetches data from WordPress page databaseId 34

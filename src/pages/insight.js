@@ -4,6 +4,8 @@ import { graphql, Link } from "gatsby"
 import Layout from "../Components/Layout.js"
 import FAQ from "../Components/Faq.js"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
+import Seo from "../Components/Seo.js"
+import { pageSeo } from "../data/seo.js"
 
 const cleanExcerpt = html => {
   if (!html) return ""
@@ -117,6 +119,8 @@ const InsightsListingPage = ({ data }) => {
 }
 
 export default InsightsListingPage
+
+export const Head = () => <Seo {...pageSeo.insight} />
 
 export const query = graphql`
   query InsightsListingPageQuery {

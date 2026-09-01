@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../Components/Layout.js"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
+import Seo from "../Components/Seo.js"
 
 const InsightDetailPage = ({ data }) => {
   const post = data?.wpPost
@@ -68,6 +69,8 @@ export const query = graphql`
     wpPost(id: { eq: $id }) {
       id
       title
+      slug
+      excerpt
       content
 
       insights {
@@ -100,3 +103,26 @@ export const query = graphql`
     }
   }
 `
+
+const plainText = value =>
+  (value || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;|&#160;/g, " ")
+    .replace(/&amp;|&#038;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim()
+
+export const Head = ({ data }) => {
+  const post = data.wpPost
+  const description = plainText(post.excerpt || post.content).slice(0, 160)
+
+  return (
+    <Seo
+      title={`${plainText(post.title)} | Dr. Vishal Pingle`}
+      description={description || "Cardiac surgery and heart health insights from Dr. Vishal Pingle."}
+      path={`/insights/${post.slug}/`}
+      keywords={["cardiac surgery insights", "heart health", "Dr. Vishal Pingle"]}
+      schemaType="BlogPosting"
+    />
+  )
+}

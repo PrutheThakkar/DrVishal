@@ -3,10 +3,10 @@ const { createProxyMiddleware } = require("http-proxy-middleware")
 
 module.exports = {
   siteMetadata: {
-    title: `Vishal Pingle`,
-    description: `Gatsby + WordPress (WPGraphQL) site`,
-    author: `@vishal-pingle`,
-    siteUrl: process.env.GATSBY_WEBSITE_URL || "https://wpvishal.studiosentientdemo.com",
+    title: `Dr. Vishal Pingle`,
+    description: `Internationally trained cardiothoracic and transplant surgeon in Mumbai.`,
+    author: `Dr. Vishal Pingle`,
+    siteUrl: process.env.GATSBY_WEBSITE_URL || "https://www.drvishalpingle.com",
   },
   plugins: [
     `gatsby-plugin-image`,

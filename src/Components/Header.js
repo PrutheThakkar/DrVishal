@@ -602,7 +602,9 @@ React.useEffect(() => {
             width: calc(100% - 28px);
             padding: 10px 12px 10px 16px;
             border-radius: 18px;
-            background:none;
+            background: rgba(253, 250, 243, 0.94);
+            border: 1px solid rgba(193, 39, 45, 0.12);
+            box-shadow: 0 12px 32px rgba(75, 29, 29, 0.08);
           }
 
           .mobile-menu {

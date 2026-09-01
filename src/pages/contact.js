@@ -4,6 +4,8 @@ import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 import { Link, graphql } from "gatsby"
 import Layout from "../Components/Layout.js"
 import vishalMap from "../images/vishal-map.jpg"
+import Seo from "../Components/Seo.js"
+import { pageSeo } from "../data/seo.js"
 
 const RequestAppointmentPage = ({ data }) => {
   const page = data?.wpPage
@@ -341,6 +343,7 @@ const RequestAppointmentPage = ({ data }) => {
 }
 
 export default RequestAppointmentPage
+export const Head = () => <Seo {...pageSeo.contact} />
 export const query = graphql`
   query contactPageQuery {
     wpPage(databaseId: { eq: 184 }) {

@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../Components/Layout"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
+import Seo from "../Components/Seo.js"
+import { getClinicalFocusSeo } from "../data/seo.js"
 
 export default function ClinicalFocusDetail({ data }) {
   const item = data.wpClinicalFocus
@@ -46,3 +48,17 @@ export const query = graphql`
     }
   }
 `
+
+export const Head = ({ data }) => {
+  const item = data.wpClinicalFocus
+  const seo = getClinicalFocusSeo(item.slug, item.title)
+
+  return (
+    <Seo
+      {...seo}
+      path={`/clinical-focus/${item.slug}/`}
+      schemaType="MedicalProcedure"
+      image={item.featuredImage?.node?.mediaItemUrl || "/icon.png"}
+    />
+  )
+}

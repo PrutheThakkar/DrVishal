@@ -1,4 +1,5 @@
 const path = require("path")
+const fs = require("fs")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -45,4 +46,33 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+}
+
+exports.onPostBuild = async ({ graphql, reporter }) => {
+  const result = await graphql(`
+    query SitemapPages {
+      allSitePage {
+        nodes {
+          path
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild("Could not generate sitemap", result.errors)
+    return
+  }
+
+  const excluded = [/^\/404\/?$/, /^\/404\.html$/, /^\/dev-404-page\/?$/, /^\/api\//]
+  const urls = result.data.allSitePage.nodes
+    .map(node => node.path)
+    .filter(pagePath => !excluded.some(pattern => pattern.test(pagePath)))
+    .sort()
+    .map(pagePath => `  <url><loc>https://www.drvishalpingle.com${pagePath}</loc></url>`)
+    .join("\n")
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
+  fs.writeFileSync(path.join("public", "sitemap.xml"), sitemap)
+  reporter.info("Generated sitemap.xml")
 }

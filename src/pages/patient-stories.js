@@ -4,6 +4,8 @@ import React from "react"
 import Layout from "../Components/Layout.js";
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
 import { Link, graphql } from "gatsby"
+import Seo from "../Components/Seo.js"
+import { pageSeo } from "../data/seo.js"
 const PatientStoriesPage = ({ data }) => {
   const page = data?.wpPage
   const insidePage = page?.insidePage
@@ -67,6 +69,7 @@ const PatientStoriesPage = ({ data }) => {
 }
 
 export default PatientStoriesPage
+export const Head = () => <Seo {...pageSeo.patientStories} />
 export const query = graphql`
   query PatientStoriesPageQuery {
     wpPage(databaseId: { eq: 38 }) {

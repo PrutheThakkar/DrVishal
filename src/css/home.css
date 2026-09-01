@@ -34,7 +34,31 @@
 }
 @media (max-width: 768px) {
   .home-hero-sec {
-    height: 600px;
+    top: 88px;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .home-hero-sec::before {
+    background: rgba(253, 250, 243, 0.72);
+  }
+
+  /* Mobile has no GSAP reveal timeline, so the hero must be visible by default. */
+  .home-hero-sec .img-wrap {
+    width: 138%;
+    margin-left: -19%;
+    opacity: 0.28 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .home-hero-sec .img-wrap img {
+    width: 100%;
+    max-width: none;
+    height: auto;
   }
 }
 
@@ -123,9 +147,11 @@
 @media (max-width: 767px) {
   .about-section {
     min-height: auto;
-    height: 550px;
-    padding: 30px 0;
-    padding-top: 120px;
+    height: auto;
+    padding: 155px 0 56px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
   }
 }
 .about-section::before {
@@ -194,6 +220,7 @@
     width: 100%;
     height: auto;
     margin: 0 auto;
+    gap: 22px;
   }
 }
 .about-section .container .img-wrap img {
@@ -207,8 +234,8 @@
 }
 @media (max-width:400px) {
   .about-section .container .img-wrap img {
-   width: 100%;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 0;
   }
 }
 .about-section .container .img-wrap .para {
@@ -229,8 +256,13 @@
   color: #FF875A;
 }
 @media (max-width: 767px) {
+  .about-section .container .img-wrap .para {
+    margin-bottom: 8px;
+  }
+
   .about-section .container .img-wrap .para p {
     margin-bottom: 0;
+    line-height: 1.45;
   }
 }
 @media (max-width: 1025px) {
@@ -242,7 +274,16 @@
   .about-section .container .img-wrap .btn-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    width: min(100%, 290px);
+  }
+
+  .about-section .container .img-wrap .btn-wrapper a {
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    padding: 10px 18px;
+    box-sizing: border-box;
   }
 }
 .about-section .container .img-wrap .btn-wrapper a {
@@ -1840,7 +1881,6 @@ height: auto;
   position: relative;
   z-index: 5;
 }
-
 
 
 

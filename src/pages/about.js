@@ -5,6 +5,8 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../Components/Layout.js"
 import InsideBanner from "../Components/Inside-Page-Top-Sec.js"
+import Seo from "../Components/Seo.js"
+import { pageSeo } from "../data/seo.js"
 
 const AboutPage = ({ data }) => {
   const page = data?.wpPage
@@ -243,6 +245,8 @@ const AboutPage = ({ data }) => {
 }
 
 export default AboutPage
+
+export const Head = () => <Seo {...pageSeo.about} />
 
 export const query = graphql`
   query AboutPageQuery {

@@ -8,6 +8,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../Components/Layout.js"
 import ClinicalProcess from "../Components/ClinicalProcess.js"
 import FAQ from "../Components/Faq.js"
+import Seo from "../Components/Seo.js"
+import { pageSeo } from "../data/seo.js"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination } from "swiper/modules"
@@ -39,6 +41,8 @@ const cleanExcerpt = html => {
     .replace(/\s+/g, " ")
     .trim()
 }
+
+export const Head = () => <Seo {...pageSeo.home} />
 
 export default function IndexPage() {
   const data = useStaticQuery(graphql`
