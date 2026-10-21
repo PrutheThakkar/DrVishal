@@ -104,7 +104,7 @@ const InsightsListingPage = ({ data }) => {
       <div className="inside-faq" data-aos="fade-up">
         <FAQ limit={10} />
       </div>
-
+{/* 
       <section className="bottom-section faq">
         <div className="container">
           <h3>Don’t see the answer you need?</h3>
@@ -113,7 +113,7 @@ const InsightsListingPage = ({ data }) => {
             Contact Now
           </a>
         </div>
-      </section>
+      </section> */}
     </Layout>
   )
 }

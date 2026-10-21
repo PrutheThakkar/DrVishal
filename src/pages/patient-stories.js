@@ -34,7 +34,7 @@ const PatientStoriesPage = ({ data }) => {
 
 
       {/* Bottom CTA */}
-      <section className="bottom-section">
+      {/* <section className="bottom-section">
         <div className="container">
           <h3>Don’t see the answer you need?</h3>
           <p>Contact Dr. Vishal Pingle for more details</p>
@@ -63,7 +63,7 @@ const PatientStoriesPage = ({ data }) => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   )
 }

@@ -18,7 +18,7 @@ const AboutPage = ({ data }) => {
         title={insidePage?.pageTitle}
         showAboutList={true}
       />
-      <section className="about-new-exp" data-aos="fade-up">
+      {/* <section className="about-new-exp" data-aos="fade-up">
         <div className="container">
           <ul className="about-banner-list">
             <li>
@@ -64,7 +64,7 @@ const AboutPage = ({ data }) => {
             </li>
           </ul>
         </div>
-      </section>
+      </section> */}
 
       <section className="Dr-vishal-pingale">
         <div className="container">

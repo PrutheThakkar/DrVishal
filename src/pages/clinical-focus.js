@@ -79,7 +79,7 @@ const ClinicalFocusPage = ({ data }) => {
 
 
       {/* ── Bottom CTA ── */}
-      <section className="bottom-section" data-aos="fade-up">
+      {/* <section className="bottom-section" data-aos="fade-up">
         <div className="container">
           <h3>Don&apos;t see the answer you need?</h3>
           <p>Contact Dr. Vishal Pingle for more details</p>
@@ -108,7 +108,7 @@ const ClinicalFocusPage = ({ data }) => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   )
 }

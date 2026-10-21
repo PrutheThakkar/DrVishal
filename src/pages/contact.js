@@ -188,21 +188,14 @@ const RequestAppointmentPage = ({ data }) => {
               </h2>
 
               <p>
-                Dr. Vishal Pingle operates at leading hospitals across Mumbai, each
-                equipped with state-of-the-art cardiac ICUs, advanced surgical
-                technology, and specialized transplant programs. This allows
-                patients to receive complex heart and lung care with the highest
-                standards of safety and precision, while maintaining continuity and
-                personalized attention.
+                Dr. Vishal Pingle consults and practises at hospitals across Mumbai. The facilities available, including cardiac intensive care, surgical services and transplant programmes, vary by hospital and the clinical requirements of each patient.
               </p>
 
               <p>
-                Appointments are simple and flexible, with options for online
-                booking, phone consultations, or hospital referrals. Each hospital
-                is chosen for accessibility, patient-friendly facilities, and
-                expert multidisciplinary teams, ensuring that world-class cardiac
-                care is always convenient and stress-free.
+                The choice of hospital and treatment setting depends on the patient's condition, the procedure being considered and the services required. Coordination between the treating surgeon and the wider medical team forms part of planning and delivering care.
               </p>
+
+              <p>Patients can enquire about appointments through the relevant hospital or the available booking channels. For a consultation, it is useful to carry previous medical records, investigation reports and a list of current medications to help inform the clinical assessment.</p>
             </div>
 
             <div className="wrapper" data-aos="fade-up">
@@ -307,7 +300,7 @@ const RequestAppointmentPage = ({ data }) => {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bottom-section" data-aos="fade-up">
+        {/* <section className="bottom-section" data-aos="fade-up">
           <div className="container">
             <h3>Don’t see the answer you need?</h3>
             <p>Contact Dr. Vishal Pingle for more details</p>
@@ -336,7 +329,7 @@ const RequestAppointmentPage = ({ data }) => {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </Layout>
   )
