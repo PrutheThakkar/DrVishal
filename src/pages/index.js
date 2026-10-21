@@ -462,7 +462,7 @@ export default function IndexPage() {
                 <li key={index}>
                   <p>{item.matrixTitle}</p>
 
-                  <div className="img-wrap">
+                  <div className="achievement-image">
                     <GatsbyImage
                       image={item.matrixImage.node.gatsbyImage}
                       alt={item.matrixImage.node.altText || item.matrixTitle}
