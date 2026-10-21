@@ -984,8 +984,15 @@ p:last-child{
   align-items: center;
   justify-content: center;
   gap: clamp(8px, 1vw, 16px);
-  transform: translateY(10px);
-  animation: logoFadeIn 0.8s ease forwards;
+  flex-shrink: 0;
+  --preloader-logo-scale: 1;
+  transform: scale(var(--preloader-logo-scale));
+  visibility: hidden;
+}
+
+.revive-preloader-logo[data-font-ready="true"] {
+  visibility: visible;
+  animation: logoFadeIn 0.8s ease both;
 }
 
 .revive-heart-svg {
@@ -1010,9 +1017,14 @@ p:last-child{
   align-items: flex-start;
   justify-content: center;
   margin-left: -18px;
+  /* Reserve space before the web font loads so the centered logo cannot shift. */
+  width: clamp(180px, 18vw, 320px);
+  flex-shrink: 0;
 }
 
 .revive-logo-text h2 {
+  width: 100%;
+  white-space: nowrap;
   margin: 0;
   color: #fff;
   font-size: clamp(28px, 3vw, 54px);
@@ -1068,19 +1080,17 @@ p:last-child{
 @keyframes logoFadeIn {
   from {
     opacity: 0;
-    transform: translateY(16px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @media (max-width: 575px) {
   .revive-preloader-logo {
     gap: 4px;
-    transform: scale(0.9);
+    --preloader-logo-scale: 0.9;
   }
 
   .revive-logo-text {
@@ -1098,6 +1108,7 @@ p:last-child{
 
 .revive-heart-svg {
   width: 110px;
+  flex-shrink: 0;
   height: auto;
   overflow: visible;
 }

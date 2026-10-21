@@ -43,8 +43,8 @@ const InsightsListingPage = ({ data }) => {
         <div className="container">
           <div className="title-wrapper">
             <h2>
-              Patient Stories
-              <span>Real Stories. Real Transformations.</span>
+              Latest Insights & Articles
+              <span>Expert perspectives on advanced cardiac care</span>
             </h2>
           </div>
 

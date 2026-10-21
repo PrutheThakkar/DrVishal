@@ -30,7 +30,7 @@ export const pageSeo = {
     title: "Patient Stories | Dr. Vishal Pingle",
     description: "Read patient stories and experiences related to cardiac and thoracic care, complex surgery and recovery under Dr. Vishal Pingle.",
     keywords: ["Dr. Vishal Pingle patient stories", "cardiac surgery patient stories", "heart surgery recovery stories", "cardiac surgeon Mumbai reviews", "heart transplant patient stories", "thoracic surgery patient stories"],
-    schemaType: "MedicalWebPage",
+    schemaType: "MedicalWebPage", 
   },
   contact: {
     path: "/contact/",

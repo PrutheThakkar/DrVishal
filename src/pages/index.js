@@ -10,6 +10,7 @@ import ClinicalProcess from "../Components/ClinicalProcess.js"
 import FAQ from "../Components/Faq.js"
 import Seo from "../Components/Seo.js"
 import { pageSeo } from "../data/seo.js"
+import preloaderFont from "../fonts/Birthstone-Regular.ttf"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination } from "swiper/modules"
@@ -42,9 +43,32 @@ const cleanExcerpt = html => {
     .trim()
 }
 
-export const Head = () => <Seo {...pageSeo.home} />
+export const Head = () => (
+  <>
+    <Seo {...pageSeo.home} />
+    <link rel="preload" href={preloaderFont} as="font" type="font/ttf" crossOrigin="anonymous" />
+  </>
+)
 
 export default function IndexPage() {
+  const [preloaderFontReady, setPreloaderFontReady] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+    const showLogo = () => {
+      if (!cancelled) setPreloaderFontReady(true)
+    }
+
+    // Never show fallback lettering: its changing glyph widths look like a slide.
+    if (document.fonts) {
+      document.fonts.load('28px "Birthstone-Regular"', "Welcome").then(showLogo, showLogo)
+    } else {
+      showLogo()
+    }
+
+    return () => { cancelled = true }
+  }, [])
+
   const data = useStaticQuery(graphql`
     query MyQuery {
       allWpPage(filter: { databaseId: { eq: 30 } }) {
@@ -304,7 +328,7 @@ export default function IndexPage() {
                PRELOADER
           ═══════════════════════════════════════════ */}
       <div id="preloader">
-        <div className="revive-preloader-logo">
+        <div className="revive-preloader-logo" data-font-ready={preloaderFontReady}>
           <svg
             className="revive-heart-svg"
             viewBox="0 0 190 170"
