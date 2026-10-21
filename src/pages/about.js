@@ -87,11 +87,7 @@ const AboutPage = ({ data }) => {
           </div>
 
           <p data-aos="fade-up">
-            Dr. Vishal N. Pingle is an internationally trained cardiothoracic
-            surgeon and Director of Revive Heart Institute, Mumbai. With
-            expertise spanning heart and lung transplants, minimally invasive
-            surgery, complex valve, and aortic procedures, he combines
-            world-class technical skill with patient-centered care.
+            Dr. Vishal N. Pingle is a cardiothoracic surgeon and Director of Revive Heart Institute, Mumbai. His clinical practice includes cardiac surgery, heart and lung transplantation, minimally invasive procedures, and surgery for valve and aortic conditions. He has undertaken surgical training in the UK, Germany and the Netherlands.
           </p>
 
           <ul className="list-od-degree" data-aos="fade-up">
@@ -135,14 +131,9 @@ const AboutPage = ({ data }) => {
           </ul>
 
           <p className="map-text" data-aos="fade-up">
-            From the very start of his medical career, Dr. Pingle recognized
-            that mastery in cardiac surgery requires continuous learning. He
-            pursued advanced fellowships in the <span>UK</span>,{" "}
-            <span>Germany</span>, and the <span>Netherlands</span>, gaining
-            hands-on experience in the latest surgical techniques, transplant
-            medicine, and multidisciplinary care. Today, he brings this global
-            expertise directly to his patients in <span>India</span>, offering
-            outcomes that meet international standards.
+            A career in cardiac surgery is shaped by continuous learning, careful judgement and experience across different clinical settings. Dr. Vishal Pingle has undertaken surgical training in the UK, Germany and the Netherlands, gaining exposure to approaches in cardiac surgery, transplantation and multidisciplinary care.
+
+His clinical practice brings together experience in managing complex heart conditions, heart and lung transplantation, and evaluating treatment options for individual patients. From understanding the clinical findings to discussing the next steps in care, each decision involves weighing the available options against the patient's condition and needs, in collaboration with the wider medical team.
           </p>
 
          <div className="img-wrap journey" data-aos="fade-up">
@@ -204,12 +195,9 @@ const AboutPage = ({ data }) => {
           </div>
 
           <p data-aos="fade-up">
-            Dr. Pingle believes that the best outcomes come from aligning
-            treatment intensity with disease severity. Not every heart or lung
-            condition requires surgery; sometimes medical management or
-            minimally invasive procedures are safer and more effective. Every
-            patient receives an individualized plan designed to maximize benefit
-            while minimizing risk.
+            Choosing a treatment involves understanding both the condition and the needs of the person living with it. Dr. Vishal Pingle’s clinical approach considers the severity of the heart or lung condition, investigation findings and the treatment options available. Depending on the clinical assessment, care may involve medication, catheter-based procedures, minimally invasive techniques or surgery.
+
+Each treatment decision requires careful consideration of its potential benefits, risks and suitability for the individual patient. Working with the wider medical team, the aim is to identify an appropriate course of care based on the patient's clinical needs.
           </p>
         </div>
       </section>
@@ -218,25 +206,19 @@ const AboutPage = ({ data }) => {
         <div className="container">
           <div className="title-wrapper">
             <h2>
-              Commitment to Patients &amp; Lifelong Learning
-              <span>Every Patient is Unique — Every Journey Matters</span>
+              Commitment to Patients and Lifelong Learning
+              <span>Every Patient Is Different. Every Treatment Decision Matters.</span>
             </h2>
           </div>
 
           <p data-aos="fade-up">
-            Dr. Pingle believes that the best outcomes come from aligning
-            treatment intensity with disease severity. Not every heart or lung
-            condition requires surgery; sometimes medical management or
-            minimally invasive procedures are safer and more effective. Every
-            patient receives an individualized plan designed to maximize benefit
-            while minimizing risk.
+            Heart and lung conditions can vary widely in their severity, progression and effect on daily life. Dr. Vishal Pingle’s approach to treatment considers these differences, along with investigation findings, medical history and the options available. Depending on the patient's condition, care may involve medication, catheter-based procedures, minimally invasive techniques or surgery.
           </p>
 
           <p data-aos="fade-up">
-            By combining <span>global expertise, surgical excellence</span>, and{" "}
-            <span>genuine empathy</span>, Dr. Pingle ensures that every patient
-            receives care that is both advanced and personally meaningful,
-            helping them achieve the best possible outcomes and quality of life.
+            Cardiac care involves more than choosing a procedure. It requires a careful assessment of the condition, an understanding of the patient's concerns and a discussion of the available treatment options. These considerations help guide decisions in collaboration with the wider medical team.
+
+For Dr. Pingle, each treatment decision involves weighing the potential benefits and risks to identify an approach suited to the individual patient's clinical needs.
           </p>
         </div>
       </section>
